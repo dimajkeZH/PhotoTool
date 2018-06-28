@@ -1,3 +1,0 @@
-<?php
-
-//DEFINE('name', 'value');
