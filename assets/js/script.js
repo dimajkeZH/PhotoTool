@@ -15,6 +15,11 @@ function custormScrollModalForm(){
     });
 })(jQuery);
 
-// function modalOpen (){
-// 	$(".modal_wnd").toggleClass("open");
-// }
+function modalOpen (){
+	$(".modal_wnd_inner").fadeIn(400);
+	$(".modal_wnd_wrapper").fadeIn(400);
+}
+function modalClose (){
+	$(".modal_wnd_inner").fadeOut(400);
+	$(".modal_wnd_wrapper").fadeOut(400);
+}
