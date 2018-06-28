@@ -127,7 +127,7 @@
 			<div class="modal_wnd_inner" id="window">
 				<div class="modal_wnd_head">
 					<button onclick="modalClose()" class="btn red">Отмена</button>
-					<button form="modal_user_form" class="btn green">Сохранить</button>
+					<button form="" class="btn green">Сохранить</button>
 				</div>
 				<div class="modal_wnd_content">
 					<div class="modal_tasks">
@@ -136,7 +136,7 @@
 								<div class="forma_group">
 									<label>
 										<p>Пользователь:</p>
-										<select name="" id="">
+										<select required name="" id="">
 											<option value="Пользователь 1">Пользователь 1</option>
 											<option value="Пользователь 2">Пользователь 2</option>
 											<option value="Пользователь 3">Пользователь 3</option>
@@ -146,14 +146,36 @@
 								<div class="forma_group">
 									<label>
 										<p>Начало</p>
-										<input type="datetime-local">
+										<input required type="datetime-local">
 									</label>
 								</div>
 								<div class="forma_group">
 									<label>
 										<p>Конец</p>
-										<input type="datetime-local">
+										<input required type="datetime-local">
 									</label>
+								</div>
+							</div>
+							<div class="modal_tasks_form_content">
+								<div class="modal_tasks_form_tags">
+									<div class="tag_checkbox">
+										<label>
+											<span class="tag_type location">Геолокация</span>
+											<input value="" id="" name="" type="checkbox">
+											<p class="checkbox_custom">&#10004;</p>
+										</label>
+									</div>
+								</div>
+								<div class="modal_tasks_form_photo_wrapper">
+									<div class="modal_tasks_form_photo">
+										<div class="photo_checkbox">
+											<label>
+												<img src="/assets/img/de.png" alt="">
+												<input value="" id="" name="" type="checkbox">
+												<span class="checkbox_custom"></span>
+											</label>
+										</div>
+									</div>
 								</div>
 							</div>
 						</form>

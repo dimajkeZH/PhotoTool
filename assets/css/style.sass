@@ -2,13 +2,18 @@ $lightgray: #f3f6fa
 $lightgray2: #f2f2f2
 $lightgray3: #e8e8e8
 $gray: #999999
-$blue: rgba(54, 151, 205, 1)
-$bluehover: rgba(54, 151, 205, .8)
+$lightblue: rgba(54, 151, 205, 1)
+$lightbluehover: rgba(54, 151, 205, .8)
 $green: rgba(46, 169, 153, 1)
 $greenhover: rgba(46, 169, 153, .8)
 $red:  rgba(187, 61, 78, 1)
 $redhover: rgba(187, 61, 78, .8)
-
+$green2: rgba(0, 180, 73, 1)
+$tagorange: #ff740a
+$tagblue: #168de2
+$taggreen: #336315
+$tagred: #9e3b33
+$taggray: #858585
 *
 	box-sizing: border-box
 	margin: 0
@@ -32,9 +37,9 @@ $redhover: rgba(187, 61, 78, .8)
 		&.green:hover
 			background-color: $greenhover
 		&.blue
-			background-color: $blue
+			background-color: $lightblue
 		&.blue:hover
-			background-color: $bluehover
+			background-color: $lightbluehover
 		&.red
 			background-color: $red
 		&.red:hover
@@ -92,13 +97,13 @@ $redhover: rgba(187, 61, 78, .8)
 								color: $red
 						input
 							width: 100%
-							border: 1px solid $blue
+							border: 1px solid $lightblue
 							border-radius: 3px
 							height: 20px
 							outline: 0px
 							padding: 0px 10px
 						input:focus
-							box-shadow: 0px 0px 5px 0px $blue
+							box-shadow: 0px 0px 5px 0px $lightblue
 			.modal_user_info
 				padding: 0px 15px 10px 15px
 				.modal_user_info_title
@@ -125,6 +130,7 @@ $redhover: rgba(187, 61, 78, .8)
 							padding: 5px
 							text-align: center
 			.modal_tasks
+				width: 	900px
 				.modal_tasks_form
 					width: 100%
 				.modal_tasks_form_head
@@ -144,14 +150,109 @@ $redhover: rgba(187, 61, 78, .8)
 							p
 								margin-bottom: 5px	
 							input, select
-								border: 1px solid $blue
+								border: 1px solid $lightblue
 								outline: 0px
 								width: 100%	
 								padding: 5px 10px
 							input:focus, select:focus
-								box-shadow: 0px 0px 5px 0px $blue
-
-
+								box-shadow: 0px 0px 5px 0px $lightblue
+				.modal_tasks_form_content
+					max-height: 400px
+					display: -webkit-flex
+					display: -moz-flex
+					display: -ms-flex
+					display: -o-flex
+					display: flex
+					justify-content: center
+					.modal_tasks_form_tags
+						width: 35%
+						border-right: 1px solid $gray
+						.tag_checkbox
+							margin: 10px 20px 5px 0px
+							label
+								display: inline-block	
+								vertical-align: middle
+								display: -webkit-flex
+								display: -moz-flex
+								display: -ms-flex
+								display: -o-flex
+								display: flex
+								justify-content: space-between
+								align-items: center
+								position: relative
+								width: 100%
+								cursor: pointer
+								.tag_type
+									width: 80%	
+									background-color: $lightblue
+									padding: 7px
+									color: #fff
+									margin-left: 15px	
+									width: 85%	
+									&.location
+										background: $taggreen
+									&.time
+										background: $tagorange
+									&.date
+										background: $tagblue
+									&.datatime
+										background: linear-gradient(to right, $tagblue, $tagorange)
+									&.text
+										background: $taggray
+									&.nubmer
+										background: $tagred
+								input
+									display: none
+								.checkbox_custom
+									position: absolute
+									height: 100%	
+									right: 5px
+									color: $red
+									font-size: 22px	
+									display: inline-block
+									vertical-align: middle
+									text-shadow: 0px 0px 2px $red
+								input:checked + .checkbox_custom
+									color: $green2
+									text-shadow: 0px 0px 5px $green2
+					.modal_tasks_form_photo_wrapper
+						width: 65%
+						.modal_tasks_form_photo
+							width: 100%		
+							display: -webkit-flex
+							display: -moz-flex
+							display: -ms-flex
+							display: -o-flex
+							display: flex
+							align-content: center
+							align-items: center
+							flex-wrap: wrap
+							padding-right: 10px
+							.photo_checkbox
+								margin-bottom: 5px
+								width: 25%
+								padding: 10px		
+								label
+									display: inline-block	
+									vertical-align: middle
+									position: relative	
+									cursor: pointer
+									img
+										width: 100%
+									input
+										display: none
+									.checkbox_custom
+										position: absolute
+										top: 0
+										right: 0
+										z-index: 5	
+										width: 100%	
+										height: 100%
+										
+									input:checked + .checkbox_custom
+										background: radial-gradient(circle, #fff, $green2 );
+										opacity: .7
+										border: 1px solid $gray
 	.header
 		background: linear-gradient(to right, #3f4850 0%, #3a4e59 25%, #38545f 50%, #43554d 75%, #573d4e 100%)
 		width: 100%
@@ -271,7 +372,7 @@ $redhover: rgba(187, 61, 78, .8)
 						width: 100%
 						transition: .4s
 					input:focus, select:focus
-						box-shadow: 0px 0px 5px 0px $blue
+						box-shadow: 0px 0px 5px 0px $lightblue
 
 
 
