@@ -97,6 +97,8 @@ $redhover: rgba(187, 61, 78, .8)
 							height: 20px
 							outline: 0px
 							padding: 0px 10px
+						input:focus
+							box-shadow: 0px 0px 5px 0px $blue
 			.modal_user_info
 				padding: 0px 15px 10px 15px
 				.modal_user_info_title
@@ -228,5 +230,18 @@ $redhover: rgba(187, 61, 78, .8)
 					border: 1px solid rgba(0,0,0, .2)
 					padding: 5px
 					text-align: center
+				td
+					input, select
+						border: 0px
+						outline: 0
+						background-color: $lightgray
+						height: 25px
+						border-radius: 3px
+						padding: 0px 10px
+						width: 100%
+						transition: .4s
+					input:focus, select:focus
+						box-shadow: 0px 0px 5px 0px $blue
+
 
 
