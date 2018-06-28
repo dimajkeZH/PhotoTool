@@ -1,0 +1,3 @@
+<?php
+
+//DEFINE('name', 'value');
