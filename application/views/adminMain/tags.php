@@ -1,1 +1,1 @@
-<?php debug($TAGS); ?>
+<?php //debug($TAGS); ?>

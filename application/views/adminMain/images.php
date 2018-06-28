@@ -1,1 +1,1 @@
-<?php debug($IMAGES); ?>
+<?php //debug($IMAGES); ?>

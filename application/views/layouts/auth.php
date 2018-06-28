@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="/assets/css/auth.css">
 	<title>login</title>
 </head>
 <body>
@@ -19,8 +19,5 @@
 			</div>
 		</div>
 	</div>
-	<script src="/assets/js/jquery.min.js"></script>
-	<script src="/assets/js/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.js"></script>
-	<script src="/assets/js/script.js"></script>
 </body>
 </html>

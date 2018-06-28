@@ -6,7 +6,7 @@ use application\models\Admin;
 
 class AdminMain extends Admin {
 
-	public $TITLE = '';
+	public $TITLE = 'webPHOTO';
 
 	public function getHeaders($route){
 		$return['TITLE'] = $this->TITLE;
