@@ -100,6 +100,9 @@
             height: 20px;
             outline: 0px;
             padding: 0px 10px; }
+          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_form .forma_group label input:focus {
+            -webkit-box-shadow: 0px 0px 5px 0px #3697cd;
+            box-shadow: 0px 0px 5px 0px #3697cd; }
       .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info {
         padding: 0px 15px 10px 15px; }
         .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info .modal_user_info_title {
@@ -256,3 +259,17 @@
           border: 1px solid rgba(0, 0, 0, 0.2);
           padding: 5px;
           text-align: center; }
+        .main_wrapper .content_wrapper .main_content_info .table_wrapper td input, .main_wrapper .content_wrapper .main_content_info .table_wrapper td select {
+          border: 0px;
+          outline: 0;
+          background-color: #f3f6fa;
+          height: 25px;
+          border-radius: 3px;
+          padding: 0px 10px;
+          width: 100%;
+          -webkit-transition: .4s;
+          -o-transition: .4s;
+          transition: .4s; }
+        .main_wrapper .content_wrapper .main_content_info .table_wrapper td input:focus, .main_wrapper .content_wrapper .main_content_info .table_wrapper td select:focus {
+          -webkit-box-shadow: 0px 0px 5px 0px #3697cd;
+          box-shadow: 0px 0px 5px 0px #3697cd; }
