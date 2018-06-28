@@ -60,7 +60,8 @@ class AdminMain extends Admin {
 	}
 
 	public function getUsers(){
-		$return['USERS'] = [];
+		$q = 'SELECT UA.ID, UA.F_NAME, UA.NAME, (SELECT COUNT(TL.ID) FROM TASK_LIST AS TL WHERE TL.ID_USER = UA.ID) as TASK_COUNT FROM USER_ACCOUNTS as UA;';
+		$return['USERS'] = $this->db->row($q);;
 		return $return;
 	}
 
