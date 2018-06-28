@@ -403,6 +403,22 @@
         -ms-flex-align: center;
         align-items: center;
         height: 100%; }
+        .main_wrapper .content_wrapper .main_content_head .main_content_head_settings input {
+          border: 1px solid #999999;
+          outline: 0px;
+          padding: 5px;
+          margin-left: 10px;
+          -webkit-transition: .4s;
+          -o-transition: .4s;
+          transition: .4s; }
+        .main_wrapper .content_wrapper .main_content_head .main_content_head_settings input:focus {
+          border-color: #3697cd;
+          -webkit-box-shadow: 0px 0px 5px 0px #3697cd;
+          box-shadow: 0px 0px 5px 0px #3697cd; }
+        .main_wrapper .content_wrapper .main_content_head .main_content_head_settings input[type=reset] {
+          border: 0px;
+          margin-right: 90px;
+          margin-left: 0px; }
     .main_wrapper .content_wrapper .main_content_info {
       height: 100%;
       background-color: #f3f6fa;
@@ -444,3 +460,33 @@
         .main_wrapper .content_wrapper .main_content_info .table_wrapper td input:focus, .main_wrapper .content_wrapper .main_content_info .table_wrapper td select:focus {
           -webkit-box-shadow: 0px 0px 5px 0px #3697cd;
           box-shadow: 0px 0px 5px 0px #3697cd; }
+      .main_wrapper .content_wrapper .main_content_info .photo_list {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 15px; }
+        .main_wrapper .content_wrapper .main_content_info .photo_list .photo_list_item {
+          width: calc(25% - 30px);
+          position: relative;
+          margin: 15px; }
+          .main_wrapper .content_wrapper .main_content_info .photo_list .photo_list_item img {
+            width: 100%; }
+          .main_wrapper .content_wrapper .main_content_info .photo_list .photo_list_item .btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            width: 30px;
+            height: 30px;
+            font-size: 18px; }

@@ -9,6 +9,153 @@
 	<link rel="stylesheet" href="/assets/js/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.css" />
 </head>
 <body>
+	<div class="main_wrapper">
+		<div class="header">
+			<div class="header_nav">
+				<a href="tasks.html" class="header_nav_item">
+					<p>Список заданий</p>
+				</a>
+				<a href="users.html" class="header_nav_item">
+					<p>Пользователи</p>
+				</a>
+				<a href="tags.html" class="header_nav_item">
+					<p>Тэги</p>
+				</a>
+				<a href="photo.html" class="header_nav_item">
+					<p>Фотографии</p>
+				</a>
+			</div>
+			<div class="header_logo">
+				<img src="img/sambo_logo.png" alt="">
+			</div>
+			<div class="header_settings">
+				<div class="header_settings_username">
+					<p>Панель Администратора: <span>Евгений</span></p>
+				</div>
+				<a href="#" class="btn">
+					<p>Выход</p>
+				</a>
+			</div>
+		</div>
+		<div class="content_wrapper">
+			<div class="main_content_head">
+				<p class="main_content_head_title">Список фотографий</p>
+				<div class="main_content_head_settings">
+					<form>
+						<input type="text" placeholder="Значение тэга">
+						<input type="text" placeholder="Название тэга">
+						<input type="reset" class="btn red"	>
+					</form>
+					<button onclick="modalOpen()" class="btn green">Добавить</button>
+				</div>
+			</div>
+			<div class="main_content_info">
+				<div class="photo_list">
+					<div class="photo_list_item">
+						<img src="/assets/img/de.png" alt="">
+						<button class="btn red">
+							<span>X</span>
+						</button>
+					</div>
+					<div class="photo_list_item">
+						<img src="/assets/img/china.png" alt="">
+						<button class="btn red">
+							<span>X</span>
+						</button>
+					</div>
+					<div class="photo_list_item">
+						<img src="/assets/img/korea.png" alt="">
+						<button class="btn red">
+							<span>X</span>
+						</button>
+					</div>
+					<div class="photo_list_item">
+						<img src="/assets/img/pizza.png" alt="">
+						<button class="btn red">
+							<span>X</span>
+						</button>
+					</div>
+					<div class="photo_list_item">
+						<img src="/assets/img/russia.png" alt="">
+						<button class="btn red">
+							<span>X</span>
+						</button>
+					</div>
+					<div class="photo_list_item">
+						<img src="/assets/img/sweden.png" alt="">
+						<button class="btn red">
+							<span>X</span>
+						</button>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="modal_wnd">
+			<div class="modal_wnd_wrapper" id="wrap" onclick="modalClose()">
+			</div>
+			<div class="modal_wnd_inner" id="window">
+				<div class="modal_wnd_head">
+					<button onclick="modalClose()" class="btn red">Отмена</button>
+					<button form="" class="btn green">Сохранить</button>
+				</div>
+				<div class="modal_wnd_content">
+					<div class="modal_tasks">
+						<form class="modal_tasks_form" action="">
+							<div class="modal_tasks_form_head">
+								<div class="forma_group">
+									<label>
+										<p>Пользователь:</p>
+										<select required name="" id="">
+											<option value="Пользователь 1">Пользователь 1</option>
+											<option value="Пользователь 2">Пользователь 2</option>
+											<option value="Пользователь 3">Пользователь 3</option>
+										</select>
+									</label>
+								</div>
+								<div class="forma_group date">
+									<label>
+										<p>Начало</p>
+										<input required type="date">
+										<input type="time">
+									</label>
+								</div>
+								<div class="forma_group date">
+									<label>
+										<p>Конец</p>
+										<input required type="date">
+										<input type="time">
+									</label>
+								</div>
+							</div>
+							<div class="modal_tasks_form_content">
+								<div class="modal_tasks_form_tags">
+									<div class="tag_checkbox">
+										<label>
+											<span class="tag_type location">Геолокация</span>
+											<input value="" id="" name="" type="checkbox">
+											<p class="checkbox_custom">&#10004;</p>
+										</label>
+									</div>
+								</div>
+								<div class="modal_tasks_form_photo_wrapper">
+									<div class="modal_tasks_form_photo">
+										<div class="photo_checkbox">
+											<label>
+												<img src="/assets/img/de.png" alt="">
+												<input value="" id="" name="" type="checkbox">
+												<span class="checkbox_custom"></span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<script src="/assets/js/jquery-3.3.1.min.js"></script>
 	<script src="/assets/js/slick/slick.min.js"></script>
 	<script src="/assets/js/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.js"></script>
