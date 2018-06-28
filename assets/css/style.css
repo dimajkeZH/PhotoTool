@@ -161,6 +161,24 @@
             .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label input:focus, .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label select:focus {
               -webkit-box-shadow: 0px 0px 5px 0px #3697cd;
               box-shadow: 0px 0px 5px 0px #3697cd; }
+            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group.date label {
+              display: -webkit-flex;
+              display: -moz-flex;
+              display: -ms-flex;
+              display: -o-flex;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              -ms-flex-wrap: wrap;
+              flex-wrap: wrap; }
+              .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group.date label p {
+                width: 100%; }
+              .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group.date label input {
+                width: calc(50% - 10px);
+                margin: 0px 5px 0px 5px; }
         .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content {
           max-height: 400px;
           display: -webkit-flex;
