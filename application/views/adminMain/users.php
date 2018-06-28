@@ -10,12 +10,12 @@
 					<table class="main_table">
 						<thead>
 							<tr class="table_head">
-								<th>#</th>
+								<th style="width:100px;">#</th>
 								<th>Логин</th>
 								<th>Имя</th>
-								<th>Кол-во заданий</th>
-								<th>Изменить</th>
-								<th>Удалить</th>
+								<th style="width:250px;">Кол-во заданий</th>
+								<th style="width:120px;">Изменить</th>
+								<th style="width:120px;">Удалить</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -262,6 +262,6 @@
 								</table>
 							</div>
 						</div>
-					</div>
+				</div>
 			</div>
 		</div>
