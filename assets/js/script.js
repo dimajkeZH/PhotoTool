@@ -4,6 +4,14 @@ function custormScrollContent(){
 function custormScrollModalForm(){
 	$(".modal_table_wrapper").mCustomScrollbar();
 }
+function custormScrollModalFormTasks(){
+	$(".modal_tasks_form_tags").mCustomScrollbar();
+}
+function custormScrollModalFormTasksPhoto(){
+	$(".modal_tasks_form_photo_wrapper").mCustomScrollbar();
+}
+
+
 (function($){
     $(window).on("load",function(){
        	custormScrollContent();
@@ -12,6 +20,16 @@ function custormScrollModalForm(){
 (function($){
     $(window).on("load",function(){
        	custormScrollModalForm();
+    });
+})(jQuery);
+(function($){
+    $(window).on("load",function(){
+       	custormScrollModalFormTasks();
+    });
+})(jQuery);
+(function($){
+    $(window).on("load",function(){
+       	custormScrollModalFormTasksPhoto();
     });
 })(jQuery);
 

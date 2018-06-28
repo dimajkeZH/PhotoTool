@@ -127,38 +127,157 @@
               border: 1px solid rgba(0, 0, 0, 0.2);
               padding: 5px;
               text-align: center; }
-      .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form {
-        width: 100%; }
-      .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head {
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: end;
-        -ms-flex-pack: end;
-        justify-content: flex-end;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        border-bottom: 1px solid #999999; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group {
-          width: 50%;
-          padding: 5px 15px; }
-          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label p {
-            margin-bottom: 5px; }
-          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label input, .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label select {
-            border: 1px solid #3697cd;
-            outline: 0px;
-            width: 100%;
-            padding: 5px 10px; }
-          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label input:focus, .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label select:focus {
-            -webkit-box-shadow: 0px 0px 5px 0px #3697cd;
-            box-shadow: 0px 0px 5px 0px #3697cd; }
+      .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks {
+        width: 900px; }
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form {
+          width: 100%; }
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head {
+          display: -webkit-flex;
+          display: -moz-flex;
+          display: -ms-flex;
+          display: -o-flex;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: end;
+          -ms-flex-pack: end;
+          justify-content: flex-end;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          border-bottom: 1px solid #999999; }
+          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group {
+            width: 50%;
+            padding: 5px 15px; }
+            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label p {
+              margin-bottom: 5px; }
+            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label input, .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label select {
+              border: 1px solid #3697cd;
+              outline: 0px;
+              width: 100%;
+              padding: 5px 10px; }
+            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label input:focus, .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label select:focus {
+              -webkit-box-shadow: 0px 0px 5px 0px #3697cd;
+              box-shadow: 0px 0px 5px 0px #3697cd; }
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content {
+          max-height: 400px;
+          display: -webkit-flex;
+          display: -moz-flex;
+          display: -ms-flex;
+          display: -o-flex;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center; }
+          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags {
+            width: 35%;
+            border-right: 1px solid #999999; }
+            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox {
+              margin: 10px 20px 5px 0px; }
+              .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label {
+                display: inline-block;
+                vertical-align: middle;
+                display: -webkit-flex;
+                display: -moz-flex;
+                display: -ms-flex;
+                display: -o-flex;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                position: relative;
+                width: 100%;
+                cursor: pointer; }
+                .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type {
+                  width: 80%;
+                  background-color: #3697cd;
+                  padding: 7px;
+                  color: #fff;
+                  margin-left: 15px;
+                  width: 85%; }
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.location {
+                    background: #336315; }
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.time {
+                    background: #ff740a; }
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.date {
+                    background: #168de2; }
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.datatime {
+                    background: -webkit-gradient(linear, left top, right top, from(#168de2), to(#ff740a));
+                    background: -webkit-linear-gradient(left, #168de2, #ff740a);
+                    background: -o-linear-gradient(left, #168de2, #ff740a);
+                    background: linear-gradient(to right, #168de2, #ff740a); }
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.text {
+                    background: #858585; }
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.nubmer {
+                    background: #9e3b33; }
+                .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label input {
+                  display: none; }
+                .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .checkbox_custom {
+                  position: absolute;
+                  height: 100%;
+                  right: 5px;
+                  color: #bb3d4e;
+                  font-size: 22px;
+                  display: inline-block;
+                  vertical-align: middle;
+                  text-shadow: 0px 0px 2px #bb3d4e; }
+                .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label input:checked + .checkbox_custom {
+                  color: #00b449;
+                  text-shadow: 0px 0px 5px #00b449; }
+          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper {
+            width: 65%; }
+            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo {
+              width: 100%;
+              display: -webkit-flex;
+              display: -moz-flex;
+              display: -ms-flex;
+              display: -o-flex;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -ms-flex-line-pack: center;
+              align-content: center;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+              padding-right: 10px; }
+              .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox {
+                margin-bottom: 5px;
+                width: 25%;
+                padding: 10px; }
+                .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label {
+                  display: inline-block;
+                  vertical-align: middle;
+                  position: relative;
+                  cursor: pointer; }
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label img {
+                    width: 100%; }
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label input {
+                    display: none; }
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label .checkbox_custom {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    z-index: 5;
+                    width: 100%;
+                    height: 100%; }
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label input:checked + .checkbox_custom {
+                    background: -webkit-radial-gradient(circle, #fff, #00b449);
+                    background: -o-radial-gradient(circle, #fff, #00b449);
+                    background: radial-gradient(circle, #fff, #00b449);
+                    opacity: .7;
+                    border: 1px solid #999999; }
   .main_wrapper .header {
     background: -webkit-gradient(linear, left top, right top, from(#3f4850), color-stop(25%, #3a4e59), color-stop(50%, #38545f), color-stop(75%, #43554d), to(#573d4e));
     background: -webkit-linear-gradient(left, #3f4850 0%, #3a4e59 25%, #38545f 50%, #43554d 75%, #573d4e 100%);
