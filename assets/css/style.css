@@ -127,6 +127,38 @@
               border: 1px solid rgba(0, 0, 0, 0.2);
               padding: 5px;
               text-align: center; }
+      .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form {
+        width: 100%; }
+      .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #999999; }
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group {
+          width: 50%;
+          padding: 5px 15px; }
+          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label p {
+            margin-bottom: 5px; }
+          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label input, .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label select {
+            border: 1px solid #3697cd;
+            outline: 0px;
+            width: 100%;
+            padding: 5px 10px; }
+          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label input:focus, .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label select:focus {
+            -webkit-box-shadow: 0px 0px 5px 0px #3697cd;
+            box-shadow: 0px 0px 5px 0px #3697cd; }
   .main_wrapper .header {
     background: -webkit-gradient(linear, left top, right top, from(#3f4850), color-stop(25%, #3a4e59), color-stop(50%, #38545f), color-stop(75%, #43554d), to(#573d4e));
     background: -webkit-linear-gradient(left, #3f4850 0%, #3a4e59 25%, #38545f 50%, #43554d 75%, #573d4e 100%);
@@ -253,6 +285,8 @@
           border-collapse: collapse;
           border: 1px solid #f2f2f2;
           position: relative; }
+          .main_wrapper .content_wrapper .main_content_info .table_wrapper .main_table tr:hover {
+            background-color: #f2f2f2; }
           .main_wrapper .content_wrapper .main_content_info .table_wrapper .main_table .table_head {
             background-color: #e8e8e8; }
         .main_wrapper .content_wrapper .main_content_info .table_wrapper th, .main_wrapper .content_wrapper .main_content_info .table_wrapper td {

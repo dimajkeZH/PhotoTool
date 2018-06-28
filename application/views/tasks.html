@@ -9,6 +9,159 @@
 	<link rel="stylesheet" href="/assets/js/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.css" />
 </head>
 <body>
+	<div class="main_wrapper">
+		<div class="header">
+			<div class="header_nav">
+				<a href="tasks.html" class="header_nav_item">
+					<p>Список заданий</p>
+				</a>
+				<a href="users.html" class="header_nav_item">
+					<p>Пользователи</p>
+				</a>
+				<a href="tags.html" class="header_nav_item">
+					<p>Тэги</p>
+				</a>
+				<a href="photo.html" class="header_nav_item">
+					<p>Фотографии</p>
+				</a>
+			</div>
+			<div class="header_logo">
+				<img src="img/sambo_logo.png" alt="">
+			</div>
+			<div class="header_settings">
+				<div class="header_settings_username">
+					<p>Панель Администратора: <span>Евгений</span></p>
+				</div>
+				<a href="#" class="btn">
+					<p>Выход</p>
+				</a>
+			</div>
+		</div>
+		<div class="content_wrapper">
+			<div class="main_content_head">
+				<p class="main_content_head_title">Список заданий</p>
+				<div class="main_content_head_settings">
+					<button onclick="modalOpen()" class="btn green">Добавить</button>
+				</div>
+			</div>
+			<div class="main_content_info">
+				<div class="table_wrapper">
+					<table class="main_table">
+						<thead>
+							<tr class="table_head">
+								<th>#</th>
+								<th>Логин</th>
+								<th>Дата начала</th>
+								<th>Дата конца</th>
+								<th>Времени осталось</th>
+								<th>Статус</th>
+								<th>Процент</th>
+								<th>Изменить</th>
+								<th>Удалить</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="table_item">
+								<td><span>1</span></td>
+								<td><span>zh</span></td>
+								<td><span>28.07.18 20:54</span></td>
+								<td><span>29.07.18 20:54</span></td>
+								<td><span>20:05:54</span></td>
+								<td><span>Выполнено</span></td>
+								<td><span>66%</span></td>
+								<td><button class="btn blue">C</button></td>
+								<td><button class="btn red">X</button></td>
+							</tr>
+							<tr class="table_item">
+								<td><span>1</span></td>
+								<td><span>zh</span></td>
+								<td><span>28.07.18 20:54</span></td>
+								<td><span>29.07.18 20:54</span></td>
+								<td><span>20:05:54</span></td>
+								<td><span>Выполнено</span></td>
+								<td><span>66%</span></td>
+								<td><button class="btn blue">C</button></td>
+								<td><button class="btn red">X</button></td>
+							</tr>
+							<tr class="table_item">
+								<td><span>1</span></td>
+								<td><span>zh</span></td>
+								<td><span>28.07.18 20:54</span></td>
+								<td><span>29.07.18 20:54</span></td>
+								<td><span>20:05:54</span></td>
+								<td><span>Выполнено</span></td>
+								<td><span>66%</span></td>
+								<td><button class="btn blue">C</button></td>
+								<td><button class="btn red">X</button></td>
+							</tr>
+							<tr class="table_item">
+								<td><span>1</span></td>
+								<td><span>zh</span></td>
+								<td><span>28.07.18 20:54</span></td>
+								<td><span>29.07.18 20:54</span></td>
+								<td><span>20:05:54</span></td>
+								<td><span>Выполнено</span></td>
+								<td><span>66%</span></td>
+								<td><button class="btn blue">C</button></td>
+								<td><button class="btn red">X</button></td>
+							</tr>
+							<tr class="table_item">
+								<td><span>1</span></td>
+								<td><span>zh</span></td>
+								<td><span>28.07.18 20:54</span></td>
+								<td><span>29.07.18 20:54</span></td>
+								<td><span>20:05:54</span></td>
+								<td><span>Выполнено</span></td>
+								<td><span>66%</span></td>
+								<td><button class="btn blue">C</button></td>
+								<td><button class="btn red">X</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="modal_wnd">
+			<div class="modal_wnd_wrapper" id="wrap" onclick="modalClose()">
+			</div>
+			<div class="modal_wnd_inner" id="window">
+				<div class="modal_wnd_head">
+					<button onclick="modalClose()" class="btn red">Отмена</button>
+					<button form="modal_user_form" class="btn green">Сохранить</button>
+				</div>
+				<div class="modal_wnd_content">
+					<div class="modal_tasks">
+						<form class="modal_tasks_form" action="">
+							<div class="modal_tasks_form_head">
+								<div class="forma_group">
+									<label>
+										<p>Пользователь:</p>
+										<select name="" id="">
+											<option value="Пользователь 1">Пользователь 1</option>
+											<option value="Пользователь 2">Пользователь 2</option>
+											<option value="Пользователь 3">Пользователь 3</option>
+										</select>
+									</label>
+								</div>
+								<div class="forma_group">
+									<label>
+										<p>Начало</p>
+										<input type="datetime-local">
+									</label>
+								</div>
+								<div class="forma_group">
+									<label>
+										<p>Конец</p>
+										<input type="datetime-local">
+									</label>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<script src="/assets/js/jquery-3.3.1.min.js"></script>
 	<script src="/assets/js/slick/slick.min.js"></script>
 	<script src="/assets/js/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.js"></script>
