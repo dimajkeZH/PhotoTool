@@ -50,7 +50,10 @@ class AdminMain extends Admin {
 	}
 
 	public function getTags(){
-		$return['TAGS'] = [];
+		$q = 'SELECT ID, VALUE, VAL_TYPE FROM TAG_LIST';
+		$return['TAGS'] = $this->db->row($q);
+		$q = 'SELECT VALUE, NAME FROM TAG_TYPES';
+		$return['TAG_TYPES'] = $this->db->row($q);
 		return $return;
 	}
 
@@ -61,7 +64,7 @@ class AdminMain extends Admin {
 
 	public function getUsers(){
 		$q = 'SELECT UA.ID, UA.F_NAME, UA.NAME, (SELECT COUNT(TL.ID) FROM TASK_LIST AS TL WHERE TL.ID_USER = UA.ID) as TASK_COUNT FROM USER_ACCOUNTS as UA;';
-		$return['USERS'] = $this->db->row($q);;
+		$return['USERS'] = $this->db->row($q);
 		return $return;
 	}
 

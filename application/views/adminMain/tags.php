@@ -20,17 +20,18 @@
 						<tbody>
 							<?php foreach($TAGS as $key => $tag): ?>
 							<tr class="table_item">
-								<form id="" name="">
-								<td><span>1</span></td>
+								<form id="data" name="form<?php echo $key+1; ?>">
+								<td><span><?php echo $key+1; ?></span><input for="form<?php echo $key+1; ?>" name="ID" type="text" value="<?php echo $tag['ID']; ?>" hidden></td>
 								<td>
-									<select for="" name="" id="">
-										<option value="1">Значение 1</option>
-										<option value="2">Значение 2</option>
-										<option value="3">Значение 3</option>
+									<select for="form<?php echo $key+1; ?>" name="TYPE">
+										<option value="0">--- Выберите значение ---</option>
+									<?php foreach($TAG_TYPES as $typekey => $type): ?>
+										<option value="<?php echo $type['VALUE']; ?>"<?php echo ($type['VALUE'] == $tag['VAL_TYPE'])?' selected':''?>><?php echo $type['NAME']; ?></option>
+									<?php endforeach; ?>
 									</select>
 								</td>
-								<td><input for="" name="" id="" type="text"></td>
-								<td><button class="btn red">X</button></td>
+								<td><input for="form<?php echo $key+1; ?>" name="VALUE" type="text" value="<?php echo $tag['VALUE']; ?>"></td>
+								<td><button class="btn red" onclick="tagDelete(<?php echo $tag['ID']; ?>)">X</button></td>
 								</form>
 							</tr>
 							<?php endforeach; ?>
