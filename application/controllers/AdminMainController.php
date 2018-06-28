@@ -38,7 +38,7 @@ class AdminMainController extends AdminController {
 
 	public function tasksAction() {
 		if($this->model->isAuth()){
-			$this->render($this->model->getContent($this->route));
+			$this->render($this->model->getTasks());
 		}else{
 			$this->logout();
 		}
@@ -46,7 +46,7 @@ class AdminMainController extends AdminController {
 
 	public function tagsAction() {
 		if($this->model->isAuth()){
-			$this->render($this->model->getContent($this->route));
+			$this->render($this->model->getTags());
 		}else{
 			$this->logout();
 		}
@@ -54,7 +54,7 @@ class AdminMainController extends AdminController {
 
 	public function imagesAction() {
 		if($this->model->isAuth()){
-			$this->render($this->model->getContent($this->route));
+			$this->render($this->model->getImages());
 		}else{
 			$this->logout();
 		}
@@ -62,7 +62,7 @@ class AdminMainController extends AdminController {
 
 	public function usersAction() {
 		if($this->model->isAuth()){
-			$this->render($this->model->getContent($this->route));
+			$this->render($this->model->getUsers());
 		}else{
 			$this->logout();
 		}

@@ -44,33 +44,24 @@ class AdminMain extends Admin {
 		return $return;
 	}
 
+	public function getTasks(){
+		$return['TASKS'] = [];
+		return $return;
+	}
 
+	public function getTags(){
+		$return['TAGS'] = [];
+		return $return;
+	}
 
-	//create new record in the db
-	public function sessionCreate($id_admin){
-		if($this->dif_hash){
-			$hash_s = $this->generateStr(128);
-			$hash_c = $this->generateStr(128);
-			$_SESSION['hash'] = $hash_s;
-			setcookie('hash', $hash_c, time()+$this->lifetime_hash);
-		}else{
-			$hash_s = $hash_c = $this->generateStr(128);
-			$_SESSION['hash'] = $hash_s;
-			setcookie('hash', $hash_c, time()+$this->lifetime_hash);
-		}
-		$create =  $this->now();
-		$destroy = $this->now($this->lifetime_hash);		
-		$q = 'INSERT INTO ADMIN_SESSIONS (ID_ADMIN, HASH_S, HASH_C, IP, BROWSER, DT_CREATE, DT_DESTROY) VALUES (:ID_ADMIN, :HASH_S, :HASH_C, :IP, :BROWSER, :DT_CREATE, :DT_DESTROY)';
-		$params = [
-			'ID_ADMIN' => $id_admin,
-			'HASH_S' => $hash_s,
-			'HASH_C' => $hash_c,
-			'IP' => $_SERVER['REMOTE_ADDR'],
-			'BROWSER' => $_SERVER['HTTP_USER_AGENT'],
-			'DT_CREATE' => $create,
-			'DT_DESTROY' => $destroy
-		];
-		$this->db->column($q, $params);
+	public function getImages(){
+		$return['IMAGES'] = [];
+		return $return;
+	}
+
+	public function getUsers(){
+		$return['USERS'] = [];
+		return $return;
 	}
 
 }
