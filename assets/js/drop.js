@@ -105,7 +105,7 @@
 	}
 	/* загрузка файла на сервер */
 	function uploadFile(file, i) {
-	  var url = 'loader.php'
+	  var url = '/images/upload'
 	  var xhr = new XMLHttpRequest()
 	  var formData = new FormData()
 	  xhr.open('POST', url, true)
@@ -116,7 +116,13 @@
 	  xhr.addEventListener('readystatechange', function(e) {
 	    if (xhr.readyState == 4 && xhr.status == 200) {
 	      	updateProgress(i, 100);
-	    	console.log('good '+i);
+	      	let data = xhr.responseText;
+	    	data = JSON.parse(data);
+	    	if(data.status == true){
+	    		
+	    	}else{
+	    		
+	    	}
 	    }
 	    else if (xhr.readyState == 4 && xhr.status != 200) {
 	     	console.log('error '+i);

@@ -85,9 +85,9 @@ return [
 	/* ADMIN END */
 
 	/* AJAX */
-	'eqwrq' => [
-		'controller' => 'ajax',
-		'action' => '',
+	'images/upload' => [
+		'controller' => 'AdminAjax',
+		'action' => 'uploadImage',
 	],
 	/* AJAX END */
 ];

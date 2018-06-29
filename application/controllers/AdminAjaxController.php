@@ -15,7 +15,11 @@ class AdminAjaxController extends AdminController {
 	const MESSAGE__DELETE_GOOD = 'Данные успешно удалены';
 	const MESSAGE__DELETE_BAD = 'Удаление данных не произошло';
 
+	const MESSAGE__LOADFILE_GOOD = 'Файл успешно загружен<br>';
+	const MESSAGE__LOADFILE_BAD = 'Загрузка файла прервалась<br>';
+
 	private $post;
+	private $file;
 
 	/*
 	public function taskAction() {
@@ -55,5 +59,15 @@ class AdminAjaxController extends AdminController {
 	}
 
 	*/
+
+	public function uploadImageAction(){
+		$this->post = $_POST;
+		$this->file = $_FILES['file'];
+		if($this->model->loadImage($this->file)){
+			$this->model->message(true, self::MESSAGE__DELETE_GOOD.$this->file['name']);
+		}else{
+			$this->model->message(false, self::MESSAGE__DELETE_BAD.$this->file['name']);
+		}
+	}
 
 }
