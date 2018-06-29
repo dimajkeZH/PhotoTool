@@ -13,7 +13,9 @@ function custormScrollModalFormTasksPhoto(){
 function custormScrollModalFormDrugAndDrop(){
 	$(".gallery_wrapper").mCustomScrollbar();
 }
-
+function custormScrollSlidebar(){
+	$(".sidebar_wrapper").mCustomScrollbar();
+}
 
 (function($){
     $(window).on("load",function(){
@@ -38,6 +40,11 @@ function custormScrollModalFormDrugAndDrop(){
 (function($){
     $(window).on("load",function(){
        	custormScrollModalFormDrugAndDrop();
+    });
+})(jQuery);
+(function($){
+    $(window).on("load",function(){
+       	custormScrollSlidebar();
     });
 })(jQuery);
 

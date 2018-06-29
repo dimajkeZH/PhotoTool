@@ -554,3 +554,53 @@
             width: 30px;
             height: 30px;
             font-size: 18px; }
+    .main_wrapper .content_wrapper .user_task {
+      width: 100%;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .main_wrapper .content_wrapper .user_task .slidebar_wrapper {
+        width: 35%; }
+        .main_wrapper .content_wrapper .user_task .slidebar_wrapper .slidebar {
+          width: 100%;
+          display: -webkit-flex;
+          display: -moz-flex;
+          display: -ms-flex;
+          display: -o-flex;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+          .main_wrapper .content_wrapper .user_task .slidebar_wrapper .slidebar .slidebar_item {
+            width: calc(50% - 20px);
+            margin: 10px;
+            position: relative;
+            cursor: pointer; }
+            .main_wrapper .content_wrapper .user_task .slidebar_wrapper .slidebar .slidebar_item img {
+              width: 100%; }
+            .main_wrapper .content_wrapper .user_task .slidebar_wrapper .slidebar .slidebar_item .btn {
+              position: absolute;
+              top: 0;
+              left: 0;
+              display: none; }
+            .main_wrapper .content_wrapper .user_task .slidebar_wrapper .slidebar .slidebar_item .btn:hover {
+              background-color: #2ea999; }
+              .main_wrapper .content_wrapper .user_task .slidebar_wrapper .slidebar .slidebar_item .btn:hover.active {
+                display: block; }

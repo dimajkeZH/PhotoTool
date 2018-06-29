@@ -486,6 +486,42 @@ $taggray: #858585
 						width: 30px
 						height: 30px  
 						font-size: 18px 
-
+		.user_task
+			width: 100%
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			justify-content: space-between
+			align-items: center
+			.slidebar_wrapper
+				width: 35%
+				.slidebar
+					width: 100%
+					display: -webkit-flex
+					display: -moz-flex
+					display: -ms-flex
+					display: -o-flex
+					display: flex
+					justify-content: space-between
+					align-items: center
+					flex-wrap: wrap
+					.slidebar_item
+						width: calc(50% - 20px)
+						margin: 10px
+						position: relative
+						cursor: pointer
+						img
+							width: 100%
+						.btn
+							position: absolute
+							top: 0
+							left: 0
+							display: none
+						.btn:hover
+							background-color: $green
+							&.active
+								display: block
 
 
