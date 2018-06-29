@@ -25,7 +25,12 @@ class AdminMain extends Admin {
 				if(!is_null($ID)){
 					unset($_SESSION['err']);
 					$_SESSION['username'] = 'headadmin';
-					$this->sessionCreate($ID);
+					if($_POST['rem'] && ($_POST['rem'] == 'on')){
+						$rem = true;
+					}else{
+						$rem = false;
+					}
+					$this->sessionCreate($ID, $rem);
 					return true;
 				}
 				$_SESSION['err'] = 'name/pass not found';	
@@ -45,7 +50,8 @@ class AdminMain extends Admin {
 	}
 
 	public function getTasks(){
-		$return['TASKS'] = [];
+		$q = 'SELECT * FROM TASK_LIST';
+		$return['TASKS'] = $this->db->row($q);
 		return $return;
 	}
 
@@ -58,7 +64,8 @@ class AdminMain extends Admin {
 	}
 
 	public function getImages(){
-		$return['IMAGES'] = [];
+		$q = 'SELECT ID, `PATH`, NAME FROM IMAGE_LIST';
+		$return['IMAGES'] = $this->db->row($q);
 		return $return;
 	}
 

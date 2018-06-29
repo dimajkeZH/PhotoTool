@@ -1,6 +1,6 @@
 				<form action="/admin/login" method="POST">
 					<div class="login_forma_group">
-						<p>Пользователь</p>
+						<p>Администратор</p>
 						<input type="text" placeholder="Nickname" name="name">
 					</div>
 					<div class="login_forma_group">

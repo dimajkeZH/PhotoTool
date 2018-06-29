@@ -35,7 +35,10 @@ class Admin extends Model {
 
 
 	//create new record in the db
-	public function sessionCreate($id_admin){
+	public function sessionCreate($id_admin, $perm = false){
+		if($perm){
+			$this->lifetime_hash = 31536000;
+		}
 		if($this->dif_hash){
 			$hash_s = $this->generateStr(128);
 			$hash_c = $this->generateStr(128);
