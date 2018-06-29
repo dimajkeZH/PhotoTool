@@ -120,6 +120,29 @@ function HideLoader(){
   }, loaderPageHide);
 }
 
+function getContent(uri){
+  let Data;
+  $.ajax({
+    url: uri,
+    type: 'POST',
+    success: function(data){
+      console.log(data);
+      try{
+        Data = JSON.parse(data.trim());
+      }catch{
+        console.log('Error of script. Refresh page!');
+      }finally{
+        //HideLoader();
+      }
+    },
+    error: function(){
+      console.log('something was wrong. Refresh page!');
+      //HideLoader();
+    }
+  });
+  return Data;
+}
+
 function Ajax(uri, data = [], callback = ''){
   $.ajax({
     url: uri,
@@ -170,10 +193,14 @@ function delUserAfter(){
 
 function changeUser(ID = -1){
   if(ID == -1){
-
+    S_NAME = '';
+    F_NAME = '';
+    LOGIN = '';
+    PASS = '12345678';
   }else{
-
+    let content = JSON.parse(getContent('/users/'+ID));
   }
+
   modalOpen();
 }
 function changeUserAfter(){

@@ -79,4 +79,9 @@ class AdminAjaxController extends AdminController {
 		}
 	}
 
+	public function getUserAction(){
+		$this->model->getUser($this->route);
+	}
+	
+
 }

@@ -38,6 +38,17 @@ class AdminAjax extends Admin {
 		return $this->db->bool($q, $params);
 	}
 
+	public function getUser($route){
+		$ID = $route['param'];
+		$q = '';
+		$params = [
+			'ID' => $ID
+		];
+		$return['DATA'] = $this->db->row($q, $params);
+		$this->model->message(true, $return);
+		$this->model->message(false, '');
+	}
+
 	//send finally message to user
 	public function message($status, $message, $id = -1){
 		exit(json_encode(['status' => $status, 'message' => $message, 'id' => $id]));

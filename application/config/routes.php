@@ -15,7 +15,7 @@ return [
 		'subtitle' => 'Задания',
 	],
 
-	'tasks/{0-9}[1,]' => [
+	'tasks/[0-9]{1,}' => [
 		'controller' => 'UserMain',
 		'action' => 'task',
 		'subtitle' => 'Задание',
@@ -92,6 +92,10 @@ return [
 	'images/del' => [
 		'controller' => 'AdminAjax',
 		'action' => 'delImage',
+	],
+	'users/[0-9]{1,}' => [
+		'controller' => 'AdminAjax',
+		'action' => 'getUser',
 	],
 	/* AJAX END */
 ];
