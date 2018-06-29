@@ -40,7 +40,9 @@ function modalClose (){
 	$(".modal_wnd_inner").fadeOut(400);
 	$(".modal_wnd_wrapper").fadeOut(400);
 }
-
+function taskListOpen (){
+	$(".task_list").toggleClass("active");
+}
 /* VARS */
 var typeMessage = Object.freeze({
   good : 1,
