@@ -14,7 +14,7 @@ function custormScrollModalFormDrugAndDrop(){
 	$(".gallery_wrapper").mCustomScrollbar();
 }
 function custormScrollSlidebar(){
-	$(".slidebar_wrapper").mCustomScrollbar();
+	$(".sidebar_wrapper").mCustomScrollbar();
 }
 function custormScrollUserTaskTags(){
 	$(".user_task_info_tags").mCustomScrollbar();
@@ -23,35 +23,11 @@ function custormScrollUserTaskTags(){
 (function($){
     $(window).on("load",function(){
        	custormScrollContent();
-    });
-})(jQuery);
-(function($){
-    $(window).on("load",function(){
        	custormScrollModalForm();
-    });
-})(jQuery);
-(function($){
-    $(window).on("load",function(){
        	custormScrollModalFormTasks();
-    });
-})(jQuery);
-(function($){
-    $(window).on("load",function(){
        	custormScrollModalFormTasksPhoto();
-    });
-})(jQuery);
-(function($){
-    $(window).on("load",function(){
        	custormScrollModalFormDrugAndDrop();
-    });
-})(jQuery);
-(function($){
-    $(window).on("load",function(){
        	custormScrollSlidebar();
-    });
-})(jQuery);
-(function($){
-    $(window).on("load",function(){
        	custormScrollUserTaskTags();
     });
 })(jQuery);
@@ -143,3 +119,64 @@ function HideLoader(){
     }
   }, loaderPageHide);
 }
+
+function Ajax(uri, data = [], callback = ''){
+  $.ajax({
+    url: uri,
+    type: 'POST',
+    data: data,
+    success: function(data){
+      console.log(data);
+      try{
+        data = JSON.parse(data.trim());
+        window[callback](data.message, data.status);
+      }catch{
+        console.log('Error of script. Refresh page!');
+      }finally{
+        //HideLoader();
+      }
+    },
+    error: function(){
+      console.log('something was wrong. Refresh page!');
+      //HideLoader();
+    }
+  });
+}
+
+var MAINTHIS;
+
+/* FUNCTIONS */
+function delImage(THIS, ID){
+  if (confirm("Действительно удалить эту картинку?")) {
+    MAINTHIS = THIS;
+    Ajax('/images/del', {'ID':ID}, 'delImageAfter');
+  }
+}
+function delImageAfter(text, status){
+  if(status){
+    $(MAINTHIS).parent().remove();
+    MAINTHIS = '';
+  }else{
+    messageShow(text, typeMessage.bad);
+  }
+}
+
+function delUser(THIS, ID){
+
+}
+function delUserAfter(){
+
+}
+
+function changeUser(ID = -1){
+  if(ID == -1){
+
+  }else{
+
+  }
+  modalOpen();
+}
+function changeUserAfter(){
+
+}
+/* FUNCTION END */
