@@ -101,9 +101,10 @@
 	    btn.innerHTML = '<p>X</p>';
 	    btn.onclick=function(){deleteElement(this, file.name, file.id)};
 	    box.appendChild(btn);
-	    document.getElementById('gallery').appendChild(box)
+	    document.getElementById('gallery').appendChild(box);
 	  }
 	}
+
 	/* загрузка файла на сервер */
 	function uploadFile(file, i) {
 	  var url = '/images/upload'
@@ -120,7 +121,13 @@
 	      	let data = xhr.responseText;
 	    	data = JSON.parse(data);
 	    	if(data.status == true){
-	    		$('#'+data.id+'.img_box').remove();
+	    		let parent = $('#'+data.id+'.img_box')[0];
+	    		let src = parent.getElementsByTagName('img')[0].src;
+	    		let el = document.createElement("div");
+	    		el.classList.add('photo_list_item');
+	    		el.innerHTML = '<img src="'+src+'" alt="">';
+	    		$('.photo_list').append(el);
+	    		parent.remove();
 	    		FILES.forEach(function(val, key){
 					if(val.id == data.id){
 						FILES.splice(key, 1);

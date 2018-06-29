@@ -12,43 +12,12 @@
 			</div>
 			<div class="main_content_info">
 				<div class="photo_list">
+					<?php foreach($IMAGES as $key => $image): ?>
 					<div class="photo_list_item">
-						<img src="/assets/img/de.png" alt="">
-						<button class="btn red">
-							<span>X</span>
-						</button>
+						<img src="/assets/img/catalog/<?php echo $image['PATH']; ?>.png" alt="<?php echo $image['NAME']; ?>">
+						<button class="btn red" onclick="delImage(<?php echo $image['ID']; ?>)"><span>X</span></button>
 					</div>
-					<div class="photo_list_item">
-						<img src="/assets/img/china.png" alt="">
-						<button class="btn red">
-							<span>X</span>
-						</button>
-					</div>
-					<div class="photo_list_item">
-						<img src="/assets/img/korea.png" alt="">
-						<button class="btn red">
-							<span>X</span>
-						</button>
-					</div>
-					<div class="photo_list_item">
-						<img src="/assets/img/pizza.png" alt="">
-						<button class="btn red">
-							<span>X</span>
-						</button>
-					</div>
-					<div class="photo_list_item">
-						<img src="/assets/img/russia.png" alt="">
-						<button class="btn red">
-							<span>X</span>
-						</button>
-					</div>
-					<div class="photo_list_item">
-						<img src="/assets/img/sweden.png" alt="">
-						<button class="btn red">
-							<span>X</span>
-						</button>
-					</div>
-
+					<?php endforeach; ?>
 				</div>
 			</div>
 		</div>

@@ -14,6 +14,9 @@ class Admin extends Model {
 
 	protected $dif_hash = true;
 
+	public $file_format = 'png';
+	public $file_path = 'assets/img/catalog';
+
 	public function isAuth(){
 		if(isset($_SESSION['hash']) && isset($_COOKIE['hash'])){
 			if(!empty($_SESSION['hash']) && !empty($_COOKIE['hash'])){

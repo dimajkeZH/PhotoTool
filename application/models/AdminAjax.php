@@ -7,9 +7,19 @@ use application\models\Admin;
 class AdminAjax extends Admin {
 
 	public function loadImage($file){
-		return true;
-
-
+		$oldName = pathinfo($file['name'])['filename'];
+		$tmpPath = $file['tmp_name'];
+		$newName = $this->generateStr(64);
+		$newPath = $_SERVER['DOCUMENT_ROOT'].'/'.$this->file_path.'/'.$newName.'.'.$this->file_format;
+		if(move_uploaded_file($tmpPath, $newPath)) {
+    		$q = 'INSERT INTO IMAGE_LIST (`PATH`, `NAME`) VALUES (:PATH, :NAME)';
+    		$params = [
+    			'PATH' => $newName,
+    			'NAME' => $oldName,
+    		];
+    		return $this->db->bool($q, $params);
+		}
+		return false;
 	}
 
 	//send finally message to user
