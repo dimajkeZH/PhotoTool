@@ -16,6 +16,9 @@ function custormScrollModalFormDrugAndDrop(){
 function custormScrollSlidebar(){
 	$(".slidebar_wrapper").mCustomScrollbar();
 }
+function custormScrollUserTaskTags(){
+	$(".user_task_info_tags").mCustomScrollbar();
+}
 
 (function($){
     $(window).on("load",function(){
@@ -45,6 +48,11 @@ function custormScrollSlidebar(){
 (function($){
     $(window).on("load",function(){
        	custormScrollSlidebar();
+    });
+})(jQuery);
+(function($){
+    $(window).on("load",function(){
+       	custormScrollUserTaskTags();
     });
 })(jQuery);
 

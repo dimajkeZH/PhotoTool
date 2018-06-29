@@ -633,9 +633,12 @@
             align-items: center;
             -webkit-box-pack: center;
             -ms-flex-pack: center;
-            justify-content: center; }
+            justify-content: center;
+            overflow: hidden;
+            padding: 15px 120px; }
             .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_photo .info_photo_item {
-              width: 80%;
+              width: 100%;
+              height: 100%;
               display: -webkit-flex;
               display: -moz-flex;
               display: -ms-flex;
@@ -643,8 +646,9 @@
               display: -webkit-box;
               display: -ms-flexbox;
               display: flex;
-              -ms-flex-line-pack: center;
-              align-content: center;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
               -webkit-box-pack: center;
               -ms-flex-pack: center;
               justify-content: center;
@@ -653,6 +657,80 @@
                 width: 100%; }
           .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags {
             height: 40%; }
+            .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper {
+              display: -webkit-flex;
+              display: -moz-flex;
+              display: -ms-flex;
+              display: -o-flex;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+              -ms-flex-line-pack: start;
+              align-content: flex-start;
+              height: 100%; }
+              .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper .tag_checkbox {
+                margin: 10px 20px 5px 0px;
+                width: calc(33.33% - 20px); }
+                .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper .tag_checkbox label {
+                  display: inline-block;
+                  vertical-align: middle;
+                  display: -webkit-flex;
+                  display: -moz-flex;
+                  display: -ms-flex;
+                  display: -o-flex;
+                  display: -webkit-box;
+                  display: -ms-flexbox;
+                  display: flex;
+                  -webkit-box-pack: justify;
+                  -ms-flex-pack: justify;
+                  justify-content: space-between;
+                  -webkit-box-align: center;
+                  -ms-flex-align: center;
+                  align-items: center;
+                  position: relative;
+                  width: 100%;
+                  cursor: pointer; }
+                  .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper .tag_checkbox label .tag_type {
+                    width: 80%;
+                    background-color: #3697cd;
+                    padding: 7px;
+                    color: #fff;
+                    margin-left: 15px;
+                    width: 85%; }
+                    .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper .tag_checkbox label .tag_type.location {
+                      background: #336315; }
+                    .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper .tag_checkbox label .tag_type.time {
+                      background: #ff740a; }
+                    .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper .tag_checkbox label .tag_type.date {
+                      background: #168de2; }
+                    .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper .tag_checkbox label .tag_type.datatime {
+                      background: -webkit-gradient(linear, left top, right top, from(#168de2), to(#ff740a));
+                      background: -webkit-linear-gradient(left, #168de2, #ff740a);
+                      background: -o-linear-gradient(left, #168de2, #ff740a);
+                      background: linear-gradient(to right, #168de2, #ff740a); }
+                    .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper .tag_checkbox label .tag_type.text {
+                      background: #858585; }
+                    .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper .tag_checkbox label .tag_type.nubmer {
+                      background: #9e3b33; }
+                  .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper .tag_checkbox label input {
+                    display: none; }
+                  .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper .tag_checkbox label .checkbox_custom {
+                    position: absolute;
+                    height: 100%;
+                    right: 5px;
+                    color: #bb3d4e;
+                    font-size: 22px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    text-shadow: 0px 0px 2px #bb3d4e; }
+                  .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper .tag_checkbox label input:checked + .checkbox_custom {
+                    color: #00b449;
+                    text-shadow: 0px 0px 5px #00b449; }
 
 .popup__message {
   position: absolute;
