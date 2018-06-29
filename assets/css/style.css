@@ -574,7 +574,8 @@
         justify-content: space-between;
         -webkit-box-align: center;
         -ms-flex-align: center;
-        align-items: center; }
+        align-items: center;
+        position: relative; }
         .main_wrapper .content_wrapper .user_main_content_info .user_task .sidebar_wrapper {
           width: 35%;
           height: 100%;
@@ -731,6 +732,66 @@
                   .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper .tag_checkbox label input:checked + .checkbox_custom {
                     color: #00b449;
                     text-shadow: 0px 0px 5px #00b449; }
+        .main_wrapper .content_wrapper .user_main_content_info .user_task .task_list {
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 7;
+          background-color: #f2f2f2;
+          -webkit-box-shadow: 0px 0px 5px 0px #000;
+          box-shadow: 0px 0px 5px 0px #000;
+          width: 300px;
+          padding: 10px;
+          border-top: 1px solid #999999;
+          height: 100%;
+          -webkit-transition: .4s;
+          -o-transition: .4s;
+          transition: .4s;
+          right: -400px; }
+          .main_wrapper .content_wrapper .user_main_content_info .user_task .task_list .task_list_head {
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            border-bottom: 1px solid #999999;
+            padding-bottom: 10px; }
+            .main_wrapper .content_wrapper .user_main_content_info .user_task .task_list .task_list_head .task_list_title {
+              font-size: 18px;
+              font-weight: 500; }
+            .main_wrapper .content_wrapper .user_main_content_info .user_task .task_list .task_list_head .task_list_close {
+              font-size: 16px;
+              cursor: pointer;
+              width: 25px;
+              height: 25px;
+              margin: 0px;
+              padding: 0px;
+              border-radius: 50%; }
+          .main_wrapper .content_wrapper .user_main_content_info .user_task .task_list .task_list_content ul .task_list_content_item {
+            list-style-type: none;
+            padding: 5px 10px;
+            cursor: pointer; }
+            .main_wrapper .content_wrapper .user_main_content_info .user_task .task_list .task_list_content ul .task_list_content_item a {
+              text-decoration: none;
+              color: #000;
+              width: 100%;
+              display: inline-block;
+              font-size: 16px;
+              -webkit-transition: .4s;
+              -o-transition: .4s;
+              transition: .4s; }
+          .main_wrapper .content_wrapper .user_main_content_info .user_task .task_list .task_list_content ul .task_list_content_item:hover a {
+            color: #3697cd; }
+          .main_wrapper .content_wrapper .user_main_content_info .user_task .task_list.active {
+            right: 0; }
 
 .popup__message {
   position: absolute;
