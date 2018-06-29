@@ -22,6 +22,22 @@ class AdminAjax extends Admin {
 		return false;
 	}
 
+	public function delImage($post){
+		$ID = $post['ID'];
+		$q = 'SELECT `PATH` FROM IMAGE_LIST WHERE ID = :ID';
+		$params = [
+			'ID' => $ID,
+		];
+		$FILENAME = $this->db->column($q, $params);
+		$FILENAME = $_SERVER['DOCUMENT_ROOT'].'/'.$this->file_path.'/'.$FILENAME.'.'.$this->file_format;
+		unlink($FILENAME);
+		$q = 'DELETE FROM IMAGE_LIST WHERE ID = :ID';
+		$params = [
+			'ID' => $ID,
+		];
+		return $this->db->bool($q, $params);
+	}
+
 	//send finally message to user
 	public function message($status, $message, $id = -1){
 		exit(json_encode(['status' => $status, 'message' => $message, 'id' => $id]));

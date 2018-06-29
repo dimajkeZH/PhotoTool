@@ -89,5 +89,9 @@ return [
 		'controller' => 'AdminAjax',
 		'action' => 'uploadImage',
 	],
+	'images/del' => [
+		'controller' => 'AdminAjax',
+		'action' => 'delImage',
+	],
 	/* AJAX END */
 ];

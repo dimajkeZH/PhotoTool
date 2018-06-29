@@ -2,7 +2,7 @@
 			<div class="main_content_head">
 				<p class="main_content_head_title">Пользователи</p>
 				<div class="main_content_head_settings">
-					<button onclick="modalOpen()" class="btn green">Добавить</button>
+					<button onclick="changeUser()" class="btn green">Добавить</button>
 				</div>
 			</div>
 			<div class="main_content_info">
@@ -25,8 +25,8 @@
 								<td><span><?php echo $user['NAME']; ?></span></td>
 								<td><span><?php echo $user['F_NAME']; ?></span></td>
 								<td><span><?php echo $user['TASK_COUNT']; ?></span></td>
-								<td><button class="btn blue" onlick="changeUSER(<?php echo $user['ID']; ?>)">C</button></td>
-								<td><button class="btn red" onlick="deleteUSER(<?php echo $user['ID']; ?>)">X</button></td>
+								<td><button class="btn blue" onclick="changeUser(<?php echo $user['ID']; ?>)">C</button></td>
+								<td><button class="btn red" onclick="deleteUSER(this, <?php echo $user['ID']; ?>)">X</button></td>
 							</tr>
 							<?php endforeach; ?>
 						</tbody>
