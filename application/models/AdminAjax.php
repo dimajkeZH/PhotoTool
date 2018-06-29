@@ -13,8 +13,8 @@ class AdminAjax extends Admin {
 	}
 
 	//send finally message to user
-	public function message($status, $message){
-		exit(json_encode(['status' => $status, 'message' => $message]));
+	public function message($status, $message, $id = -1){
+		exit(json_encode(['status' => $status, 'message' => $message, 'id' => $id]));
 	}
 
 	//full clear data

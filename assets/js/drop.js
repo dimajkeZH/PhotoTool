@@ -93,6 +93,7 @@
 	    img.src = reader.result
 	    let box = document.createElement('div');
 	    box.classList.add('img_box');
+	    box.id = file.id;
 	    box.appendChild(img);
 	    let btn = document.createElement('button');
 	    btn.classList.add('btn');
@@ -119,9 +120,16 @@
 	      	let data = xhr.responseText;
 	    	data = JSON.parse(data);
 	    	if(data.status == true){
-	    		showMessage(data.message);
+	    		$('#'+data.id+'.img_box').remove();
+	    		FILES.forEach(function(val, key){
+					if(val.id == data.id){
+						FILES.splice(key, 1);
+						return;
+					}
+				});
+	    		showMessage(data.message, typeMessage.good);
 	    	}else{
-	    		showMessage(data.message);
+	    		showMessage(data.message, typeMessage.bad);
 	    	}
 	    }
 	    else if (xhr.readyState == 4 && xhr.status != 200) {
