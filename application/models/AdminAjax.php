@@ -40,13 +40,16 @@ class AdminAjax extends Admin {
 
 	public function getUser($route){
 		$ID = $route['param'];
-		$q = '';
+		$q = 'SELECT UA.F_NAME, UA.S_NAME, UA.NAME, UA.MAIL, UA.PHONE, (SELECT COUNT(TL.ID) FROM TASK_LIST as TL WHERE TL.ID_USER = UA.ID) as COUNT_TASKS FROM USER_ACCOUNTS as UA WHERE UA.ID = :ID';
 		$params = [
-			'ID' => $ID
+			'ID' => $ID,
 		];
-		$return['DATA'] = $this->db->row($q, $params);
-		$this->model->message(true, $return);
-		$this->model->message(false, '');
+		$return['DATA'] = $this->db->row($q, $params)[0];
+		$q = 'SELECT * FROM USER_SESSIONS WHERE (ID_USER = :ID) AND (DT_DESTROY < NOW())';
+		$return['ONLINE'] = $this->db->row($q, $params);
+		$q = 'SELECT * FROM USER_SESSIONS WHERE (ID_USER = :ID) AND (DT_DESTROY >= NOW())';
+		$return['OFFLINE'] = $this->db->row($q, $params);
+		exit(json_encode(['STATUS'=> true, 'DATA' => $return['DATA'], 'ONLINE' => $return['ONLINE'], 'OFFLINE' => $return['OFFLINE']]));
 	}
 
 	//send finally message to user

@@ -31,7 +31,7 @@
 			</div>
 			<div class="header_settings">
 				<div class="header_settings_username">
-					<p>Панель Администратора: <span>Евгений</span></p>
+					<p>Панель Администратора: <span><?php echo $_SESSION['username']; ?></span></p>
 				</div>
 				<a href="/admin/logout" class="btn">
 					<p>Выход</p>

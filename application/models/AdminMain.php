@@ -24,7 +24,7 @@ class AdminMain extends Admin {
 				$ID = $this->verifyPSWD($name, $pass);
 				if(!is_null($ID)){
 					unset($_SESSION['err']);
-					$_SESSION['username'] = 'headadmin';
+					$_SESSION['username'] = $this->db->column('SELECT NAME FROM ADMIN_ACCOUNTS WHERE ID = '.$ID);
 					if($_POST['rem'] && ($_POST['rem'] == 'on')){
 						$rem = true;
 					}else{

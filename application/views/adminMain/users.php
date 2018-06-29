@@ -47,19 +47,19 @@
 							<div class="forma_group">
 								<label>
 									<p>Фамилия </p>
-									<input type="text" name="secondname">
+									<input type="text" name="s_name">
 								</label>
 							</div>
 							<div class="forma_group">
 								<label>
 									<p>Имя<span>*</span></p>
-									<input required type="text" name="name">
+									<input required type="text" name="f_name">
 								</label>
 							</div>
 							<div class="forma_group">
 								<label>
 									<p>Логин<span>*</span></p>
-									<input required type="text" name="nickname">
+									<input required type="text" name="name">
 								</label>
 							</div>
 							<div class="forma_group">
@@ -77,15 +77,15 @@
 							<div class="forma_group">
 								<label>
 									<p>Телефон</p>
-									<input type="text" name="phon">
+									<input type="text" name="phone">
 								</label>
 							</div>
 						</form>
 						<div class="modal_user_info">
-							<p class="modal_user_info_title">Количество заданий: <span>4</span></p>
+							<p class="modal_user_info_title">Количество заданий: <span>0</span></p>
 							<p class="modal_user_info_title">Сейчас онлайн: </p>
 							<div class="modal_table_wrapper">
-								<table class="modal_table">
+								<table class="modal_table" id="on">
 									<thead>
 										<tr>
 											<th>№</th>
@@ -110,7 +110,7 @@
 							</div>
 							<p class="modal_user_info_subtitle">Активности: </p>
 							<div class="modal_table_wrapper">
-								<table class="modal_table">
+								<table class="modal_table" id="off">
 									<thead>
 										<tr>
 											<th>№</th>

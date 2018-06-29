@@ -127,8 +127,8 @@ function getContent(uri){
   $.ajax({
     url: uri,
     type: 'POST',
+    async: false,
     success: function(data){
-      console.log(data);
       try{
         Data = JSON.parse(data.trim());
       }catch{
@@ -194,15 +194,56 @@ function delUserAfter(){
 }
 
 function changeUser(ID = -1){
+  let S_NAME, F_NAME, NAME, PASS, MAIN, PHONE;
+  let fieldF_NAME = $('#modal_user_form input[name=f_name]'),
+      fieldS_NAME = $('#modal_user_form input[name=s_name]'),
+      fieldNAME = $('#modal_user_form input[name=name]'),
+      fieldPASS = $('#modal_user_form input[name=pass]'),
+      fieldMAIL = $('#modal_user_form input[name=mail]'),
+      fieldPHONE = $('#modal_user_form input[name=phone]'),
+      fieldTaskCount = $('.modal_user_info span'),
+      fieldOnline = $('#on.modal_table tbody'),
+      fieldOffline = $('#off.modal_table tbody');
   if(ID == -1){
     S_NAME = '';
     F_NAME = '';
-    LOGIN = '';
-    PASS = '12345678';
+    NAME = '';
+    PASS = '';
+    MAIL = '';
+    PHONE = '';
+    COUNT = '';
+    ONLINE = "";
+    OFFLINE = "";
   }else{
-    let content = JSON.parse(getContent('/users/'+ID));
+    $('#modal_user_form input[name=pass]').removeAttr('required');
+    let content = getContent('/users/'+ID);
+    console.log(content);
+    S_NAME = content.DATA.S_NAME;
+    F_NAME = content.DATA.F_NAME;
+    NAME = content.DATA.NAME;
+    PASS = content.DATA.PASS;
+    MAIL = content.DATA.MAIL;
+    PHONE = content.DATA.PHONE;
+    COUNT = content.DATA.COUNT_TASKS;
+    ONLINE = "";
+    content.ONLINE.forEach(function(field, key){
+      ONLINE += "<tr><td>"+(key+1)+"</td><td>"+field.DEVICE+"</td><td>"+field.IP+"</td><td>"+field.BROWSER+"</td><td>"+field.DT_CREATE+"</td><td>"+15+"</td></tr>";
+    });
+    console.log(ONLINE);
+    OFFLINE = "";
+    content.OFFLINE.forEach(function(field, key){
+      OFFLINE += "<tr><td>"+(key+1)+"</td><td>"+field.DEVICE+"</td><td>"+field.IP+"</td><td>"+field.BROWSER+"</td><td>"+field.DT_CREATE+"</td><td>"+15+"</td></tr>";
+    });
   }
-
+  fieldF_NAME.val(F_NAME);
+  fieldS_NAME.val(S_NAME);
+  fieldNAME.val(NAME);
+  fieldPASS.val(PASS);
+  fieldMAIL.val(MAIL);
+  fieldPHONE.val(PHONE);
+  fieldTaskCount.text(COUNT);
+  fieldOnline.html(ONLINE);
+  fieldOffline.html(OFFLINE);
   modalOpen();
 }
 function changeUserAfter(){
