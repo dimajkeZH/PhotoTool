@@ -296,6 +296,70 @@
                     background: radial-gradient(circle, #fff, #00b449);
                     opacity: .7;
                     border: 1px solid #999999; }
+      .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop {
+        width: 800px; }
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop #drop-area {
+          border: 2px solid #3697cd;
+          border-radius: 20px;
+          width: 100%;
+          font-family: sans-serif;
+          padding: 20px;
+          max-height: 600px; }
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop #drop-area.highlight {
+          border-color: #2ea999; }
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop p {
+          margin-top: 0; }
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .my-form {
+          margin-bottom: 10px; }
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .gallery_wrapper {
+          max-height: 400px; }
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop #gallery {
+          margin-top: 10px;
+          display: -webkit-flex;
+          display: -moz-flex;
+          display: -ms-flex;
+          display: -o-flex;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          margin-right: 20px; }
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .button {
+          display: inline-block;
+          padding: 10px;
+          background: #ccc;
+          cursor: pointer;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          margin-top: 10px; }
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .button:hover {
+          background: #ddd; }
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop #fileElem {
+          display: none; }
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .img_box {
+          position: relative;
+          width: calc(25% - 20px);
+          margin: 10px; }
+          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .img_box img {
+            width: 100%; }
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .btn {
+          width: 25px;
+          height: 25px;
+          background-color: #bb3d4e;
+          position: absolute;
+          z-index: 15;
+          right: 0;
+          top: 0;
+          margin: 0px;
+          font-size: 12px;
+          padding: 0px; }
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop #progress-bar {
+          width: calc(100% - 25px);
+          margin: 10px; }
   .main_wrapper .header {
     background: -webkit-gradient(linear, left top, right top, from(#3f4850), color-stop(25%, #3a4e59), color-stop(50%, #38545f), color-stop(75%, #43554d), to(#573d4e));
     background: -webkit-linear-gradient(left, #3f4850 0%, #3a4e59 25%, #38545f 50%, #43554d 75%, #573d4e 100%);

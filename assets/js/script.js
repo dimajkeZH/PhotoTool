@@ -10,6 +10,9 @@ function custormScrollModalFormTasks(){
 function custormScrollModalFormTasksPhoto(){
 	$(".modal_tasks_form_photo_wrapper").mCustomScrollbar();
 }
+function custormScrollModalFormDrugAndDrop(){
+	$(".gallery_wrapper").mCustomScrollbar();
+}
 
 
 (function($){
@@ -30,6 +33,11 @@ function custormScrollModalFormTasksPhoto(){
 (function($){
     $(window).on("load",function(){
        	custormScrollModalFormTasksPhoto();
+    });
+})(jQuery);
+(function($){
+    $(window).on("load",function(){
+       	custormScrollModalFormDrugAndDrop();
     });
 })(jQuery);
 
