@@ -14,7 +14,7 @@ function custormScrollModalFormDrugAndDrop(){
 	$(".gallery_wrapper").mCustomScrollbar();
 }
 function custormScrollSlidebar(){
-	$(".sidebar_wrapper").mCustomScrollbar();
+	$(".slidebar_wrapper").mCustomScrollbar();
 }
 
 (function($){
