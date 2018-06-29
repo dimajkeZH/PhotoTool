@@ -104,16 +104,18 @@
 										</select>
 									</label>
 								</div>
-								<div class="forma_group">
+								<div class="forma_group date">
 									<label>
 										<p>Начало</p>
-										<input required type="datetime-local">
+										<input required type="date">
+										<input type="time">
 									</label>
 								</div>
-								<div class="forma_group">
+								<div class="forma_group date">
 									<label>
 										<p>Конец</p>
-										<input required type="datetime-local">
+										<input required type="date">
+										<input type="time">
 									</label>
 								</div>
 							</div>

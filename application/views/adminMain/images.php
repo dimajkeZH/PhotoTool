@@ -15,7 +15,7 @@
 					<?php foreach($IMAGES as $key => $image): ?>
 					<div class="photo_list_item">
 						<img src="/assets/img/catalog/<?php echo $image['PATH']; ?>.png" alt="<?php echo $image['NAME']; ?>">
-						<button class="btn red" onclick="delImage(<?php echo $image['ID']; ?>)"><span>X</span></button>
+						<button class="btn red" onclick="delImage(this, <?php echo $image['ID']; ?>)"><span>X</span></button>
 					</div>
 					<?php endforeach; ?>
 				</div>

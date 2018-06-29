@@ -70,4 +70,13 @@ class AdminAjaxController extends AdminController {
 		}
 	}
 
+	public function delImageAction(){
+		$this->post = $_POST;
+		if($this->model->delImage($this->post)){
+			$this->model->message(true, self::MESSAGE__DELETE_GOOD);
+		}else{
+			$this->model->message(false, self::MESSAGE__DELETE_BAD);
+		}
+	}
+
 }
