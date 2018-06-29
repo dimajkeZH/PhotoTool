@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="/assets/js/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.css" />
 </head>
 <body>
+	<div class="popup__message"></div>
 	<div class="main_wrapper">
 		<div class="header">
 			<div class="header_nav">

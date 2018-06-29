@@ -531,3 +531,27 @@ $taggray: #858585
 									display: block
 
 
+.popup__message
+	position: absolute
+	right: 0
+	bottom: 0
+	z-index: 999
+	.message
+		width: 220px
+		height: 80px
+		margin: 10px 15px
+		border-radius: 5px
+		span
+			display: block
+			position: relative
+			transform: translate(-50%, -50%)
+			top: 50%
+			left: 50%	
+			text-align: center
+			font-size: 20px
+		&.good
+			background-color: rgba(0, 255, 0, .6)
+		&.bad
+			background-color: rgba(255, 0, 0, .6)
+		&.common
+			background-color: rgba(128, 128, 128, .6)

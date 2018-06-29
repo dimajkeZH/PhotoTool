@@ -119,9 +119,9 @@
 	      	let data = xhr.responseText;
 	    	data = JSON.parse(data);
 	    	if(data.status == true){
-	    		
+	    		showMessage(data.message);
 	    	}else{
-	    		
+	    		showMessage(data.message);
 	    	}
 	    }
 	    else if (xhr.readyState == 4 && xhr.status != 200) {
