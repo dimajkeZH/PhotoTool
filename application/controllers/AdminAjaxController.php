@@ -12,6 +12,9 @@ class AdminAjaxController extends AdminController {
 	const MESSAGE__CHANGE_GOOD = 'Данные успешно изменены';
 	const MESSAGE__CHANGE_BAD = 'Изменение данных не произошло';
 
+	const MESSAGE__SAVE_GOOD = 'Данные успешно сохранены';
+	const MESSAGE__SAVE_BAD = 'Сохранение данных не произошло';
+
 	const MESSAGE__DELETE_GOOD = 'Данные успешно удалены';
 	const MESSAGE__DELETE_BAD = 'Удаление данных не произошло';
 
@@ -21,44 +24,7 @@ class AdminAjaxController extends AdminController {
 	private $post;
 	private $file;
 
-	/*
-	public function taskAction() {
-		$this->post = $_POST;
-		if($this->model->delRow($this->post)){
-			//$this->model->message(true, self::MESSAGE__DELETE_GOOD);
-		}else{
-			//$this->model->message(false, self::MESSAGE__DELETE_BAD);
-		}
-	}
 
-	public function tagAction() {
-		$this->post = $_POST;
-		if($this->model->delRow($this->post)){
-			//$this->model->message(true, self::MESSAGE__DELETE_GOOD);
-		}else{
-			//$this->model->message(false, self::MESSAGE__DELETE_BAD);
-		}
-	}
-
-	public function imageAction() {
-		$this->post = $_POST;
-		if($this->model->delRow($this->post)){
-			//$this->model->message(true, self::MESSAGE__DELETE_GOOD);
-		}else{
-			//$this->model->message(false, self::MESSAGE__DELETE_BAD);
-		}
-	}
-
-	public function userAction() {
-		$this->post = $_POST;
-		if($this->model->delRow($this->post)){
-			//$this->model->message(true, self::MESSAGE__DELETE_GOOD);
-		}else{
-			//$this->model->message(false, self::MESSAGE__DELETE_BAD);
-		}
-	}
-
-	*/
 
 	public function uploadImageAction(){
 		$this->post = $_POST;
@@ -69,7 +35,6 @@ class AdminAjaxController extends AdminController {
 			$this->model->message(false, self::MESSAGE__LOADFILE_BAD.$this->file['name'], $this->post['ID']);
 		}
 	}
-
 	public function delImageAction(){
 		$this->post = $_POST;
 		if($this->model->delImage($this->post)){
@@ -79,7 +44,8 @@ class AdminAjaxController extends AdminController {
 		}
 	}
 
-	/* API GET */
+
+
 	public function getUserAction(){
 		$content = $this->model->getUser($this->route);
 		if($this->model->isAjax()){
@@ -91,6 +57,35 @@ class AdminAjaxController extends AdminController {
 			exit();
 		}
 	}
-	/* API GET END*/
+	public function delUserAction(){
+		if($this->model->delUser($this->route)){
+			$this->model->message(true, self::MESSAGE__DELETE_GOOD);
+		}else{
+			$this->model->message(false, self::MESSAGE__DELETE_BAD);
+		}
+	}
+	public function saveUserAction(){
+		$this->post = $_POST;
+		if($this->model->saveUser($this->post)){
+			$this->model->message(true, self::MESSAGE__SAVE_GOOD);
+		}else{
+			$this->model->message(false, self::MESSAGE__SAVE_BAD);
+		}
+	}
 
+	public function delTagAction(){
+		if($this->model->delTag($this->route)){
+			$this->model->message(true, self::MESSAGE__DELETE_GOOD);
+		}else{
+			$this->model->message(false, self::MESSAGE__DELETE_BAD);
+		}
+	}
+	public function saveTagsAction(){
+		$this->post = $_POST;
+		if($this->model->saveTags($this->post)){
+			$this->model->message(true, self::MESSAGE__CHANGE_GOOD);
+		}else{
+			$this->model->message(false, self::MESSAGE__CHANGE_BAD);
+		}
+	}
 }

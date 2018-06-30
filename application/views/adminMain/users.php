@@ -40,10 +40,11 @@
 			<div class="modal_wnd_inner" id="window">
 					<div class="modal_wnd_head">
 						<button onclick="modalClose()" class="btn red">Отмена</button>
-						<button form="modal_user_form" class="btn green">Сохранить</button>
+						<button onclick="saveUser()" class="btn green">Сохранить</button>
 					</div>
 					<div class="modal_wnd_content">
-						<form class="modal_user_form" id="modal_user_form" action="">
+						<form class="modal_user_form" id="modal_user_form">
+							<input hidden type="text" name="ID" value="-1">
 							<div class="forma_group">
 								<label>
 									<p>Фамилия </p>

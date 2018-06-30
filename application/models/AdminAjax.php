@@ -54,6 +54,53 @@ class AdminAjax extends Admin {
 		return (json_encode(['STATUS'=> true, 'DATA' => $return['DATA'], 'ONLINE' => $return['ONLINE'], 'OFFLINE' => $return['OFFLINE']]));
 	}
 
+	public function delUser($route){
+		$ID = $route['param'];
+		$q = 'DELETE FROM USER_ACCOUNTS WHERE ID = :ID';
+		$params = [
+			'ID' => $ID
+		];
+		return $this->db->bool($q, $params);
+	}
+	public function saveUser($post){
+		$ID = $post['ID'];
+		$F_NAME = $post['F_NAME'];
+		$S_NAME = $post['S_NAME'];
+		$NAME = $post['NAME'];
+		$PASS = $post['PASS'];
+		$changePass = ($PASS != '')?'true':'false';
+		$PASS = $this->hashPSWD($post['PASS']);
+		$MAIL = $post['MAIL'];
+		$PHONE = $post['PHONE'];
+		$params = [
+			'F_NAME' => $F_NAME,
+			'S_NAME' => $S_NAME,
+			'NAME' => $NAME,
+			'MAIL' => $MAIL,
+			'PHONE' => $PHONE,
+		];
+		if($ID == -1){
+			$q = 'INSERT INTO USER_ACCOUNTS (F_NAME, S_NAME, NAME, MAIL, PHONE, PASS) VALUES (:F_NAME, :S_NAME, :NAME, :MAIL, :PHONE, :PASS)';
+			$params['PASS'] = $PASS;
+		}else{
+			if($changePass){
+				$params['PASS'] = $PASS;
+				$tmpSQL = ', PASS = :PASS';
+			}
+			$q = 'UPDATE USER_ACCOUNTS SET F_NAME = :F_NAME, S_NAME = :S_NAME, NAME = :NAME, MAIL = :MAIL, PHONE = :PHONE'.$tmpSQL.' WHERE ID = :ID';
+			$params['ID'] = $ID;
+		}
+		//debug($params);
+		return $this->db->bool($q, $params);
+	}
+
+	public function delTag($route){
+		
+	}
+	public function saveTags($post){
+		
+	}
+
 	//send finally message to user
 	public function message($status, $message, $id = -1){
 		exit(json_encode(['status' => $status, 'message' => $message, 'id' => $id]));

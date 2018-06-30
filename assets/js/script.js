@@ -21,16 +21,56 @@ function delImageAfter(text, status){
 function deleteUser(THIS, ID){
   if (confirm("Действительно удалить этого пользователя?")) {
     let content = getContent('/users/del/'+ID);
-    console.log(content);
     if(content != undefined){
       if(content.status){
-        showMessage(text, typeMessage.good);
+        showMessage(content.message, typeMessage.good);
+        $(THIS).parent().parent().remove();
       }else{
-        showMessage(text, typeMessage.bad);
+        showMessage(content.message, typeMessage.bad);
       }
     }else{
       showMessage('Server error', typeMessage.bad);
     }
+  }
+}
+
+var tmpUSERFIELD = '';
+
+function saveUser(){
+  let F_NAME = $('#modal_user_form input[name=f_name]').val(),
+      S_NAME = $('#modal_user_form input[name=s_name]').val(),
+      NAME = $('#modal_user_form input[name=name]').val(),
+      PASS = $('#modal_user_form input[name=pass]').val(),
+      MAIL = $('#modal_user_form input[name=mail]').val(),
+      PHONE = $('#modal_user_form input[name=phone]').val(),
+      ID = $('#modal_user_form input[name=ID]').val();
+  let passCheck = true;
+  if(ID == -1){
+    if(PASS == ''){
+      passCheck = false;
+    }
+  }
+  if((F_NAME != '') && (passCheck) && (NAME != '')){
+    let obj = {
+      'ID':ID,
+      'F_NAME':F_NAME,
+      'S_NAME':S_NAME,
+      'NAME':NAME,
+      'PASS':PASS,
+      'MAIL':MAIL,
+      'PHONE':PHONE,
+    }
+    tmpUSERFIELD = '<tr class="table_item"><td><span>NEW</span></td><td><span>'+NAME+'</span></td><td><span>'+F_NAME+'</span></td><td><span>0</span></td><td></td><td></td></tr>';
+    $('.main_table tbody').append(tmpUSERFIELD);
+    Ajax('/users/save', obj, 'saveUserAfter');
+  }
+}
+function saveUserAfter(text, status){
+  if(status){
+    modalClose();
+    showMessage(text, typeMessage.good);
+  }else{
+    showMessage(text, typeMessage.bad);
   }
 }
 
@@ -44,7 +84,8 @@ function changeUser(ID = -1){
       fieldPHONE = $('#modal_user_form input[name=phone]'),
       fieldTaskCount = $('.modal_user_info span'),
       fieldOnline = $('#on.modal_table tbody'),
-      fieldOffline = $('#off.modal_table tbody');
+      fieldOffline = $('#off.modal_table tbody'),
+      fieldID = $('#modal_user_form input[name=ID]');
   if(ID == -1){
     $('#modal_user_form input[name=pass]').attr('required', '');
     $('.modal_user_info').attr('style', 'display:none;');
@@ -72,12 +113,12 @@ function changeUser(ID = -1){
     content.ONLINE.forEach(function(field, key){
       ONLINE += "<tr><td>"+(key+1)+"</td><td>"+field.DEVICE+"</td><td>"+field.IP+"</td><td>"+field.BROWSER+"</td><td>"+field.DT_CREATE+"</td><td>"+15+"</td></tr>";
     });
-    console.log(ONLINE);
     OFFLINE = "";
     content.OFFLINE.forEach(function(field, key){
       OFFLINE += "<tr><td>"+(key+1)+"</td><td>"+field.DEVICE+"</td><td>"+field.IP+"</td><td>"+field.BROWSER+"</td><td>"+field.DT_CREATE+"</td><td>"+15+"</td></tr>";
     });
   }
+  fieldID.val(ID);
   fieldF_NAME.val(F_NAME);
   fieldS_NAME.val(S_NAME);
   fieldNAME.val(NAME);
@@ -88,6 +129,71 @@ function changeUser(ID = -1){
   fieldOnline.html(ONLINE);
   fieldOffline.html(OFFLINE);
   modalOpen();
+}
+
+function addTag() {
+  let index = maxTagFormId();
+  let tagItem = '<tr class="table_item"><form id="data" name="newform'+index+'"><td><span>NEW</span><input for="newform'+index+'" name="ID" type="text" value="-1" hidden></td><td><select name="TYPE" for="newform'+index+'"><option value="0">--- Выберите значение ---</option></select></td><td><input type="text" for="newform'+index+'" value="" name="VALUE" /></td><td><button class="btn red" onclick="deleteNewTag(this)">X</button></td></form></tr>';
+  let parent = $('.main_table tbody');
+  parent.append(tagItem);
+}
+function deleteNewTag(THIS) {
+  $(THIS).parent().parent().remove();
+}
+function maxTagFormId() {
+  let ID;
+  let max = 0;
+  let newMax;
+  let formList = $("form#data[name^=newform]");
+  if(formList.length > 0){
+    formList.each(function(index, curForm){
+      newMax = curForm.name.split('newform')[1];
+      if (newMax > max) {
+        max = newMax;
+      }
+    });
+    ID = max*1 + 1;
+  }
+  else{
+    ID = 0;
+  }
+  console.log(ID)
+  return ID;
+}
+function deleteTag(ID) {
+  if (confirm("Действительно удалить этот тег?")) {
+    let content = getContent('/tags/del/'+ID);
+    console.log(content);
+    if(content != undefined){
+      if(content.status){
+        showMessage(content.message, typeMessage.good);
+      }else{
+        showMessage(content.message, typeMessage.bad);
+      }
+    }else{
+      showMessage('Server error', typeMessage.bad);
+    }
+  }
+}
+function saveTags() {
+  let formList = $("form#data");
+  let obj, data = {};
+  formList.each(function(index, form) {
+    obj = {
+      'ID': $("input[for="+form.name+"][name=ID]").val(),
+      'TYPE': $("select[for="+form.name+"][name=TYPE]").val(),
+      'VALUE': $("input[for="+form.name+"][name=VALUE]").val(),
+    }
+    data[index] = obj;
+  });
+  Ajax('/tags/save', data, 'saveTagsAfter');
+}
+function saveTagsAfter(text, status){
+  if(status){
+    showMessage(text, typeMessage.good);
+  }else{
+    showMessage(text, typeMessage.bad);
+  }
 }
 /********************* EVENTS END *********************/
 
@@ -205,6 +311,7 @@ function getContent(uri){
     type: 'POST',
     async: false,
     success: function(data){
+      console.log(data);
       try{
         Data = JSON.parse(data.trim());
       }catch{
@@ -227,7 +334,7 @@ function Ajax(uri, data = [], callback = ''){
     type: 'POST',
     data: data,
     success: function(data){
-      //console.log(data);
+      console.log(data);
       try{
         data = JSON.parse(data.trim());
         window[callback](data.message, data.status);
