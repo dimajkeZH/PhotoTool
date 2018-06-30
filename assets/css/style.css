@@ -86,8 +86,7 @@
         align-items: center;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        padding: 10px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.4); }
+        padding: 10px; }
         .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_form .forma_group, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_user_form .forma_group {
           width: 50%;
           padding: 5px 15px; }
@@ -104,7 +103,8 @@
             -webkit-box-shadow: 0px 0px 5px 0px #3697cd;
             box-shadow: 0px 0px 5px 0px #3697cd; }
       .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_user_info {
-        padding: 0px 15px 10px 15px; }
+        padding: 0px 15px 10px 15px;
+        border-top: 1px solid rgba(0, 0, 0, 0.4); }
         .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info .modal_user_info_title, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_user_info .modal_user_info_title {
           font-size: 18px;
           margin-top: 10px; }
