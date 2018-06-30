@@ -104,5 +104,20 @@ return [
 		'action' => 'getUser',
 		'subtitle' => 'API',
 	],
+	'users/save' => [
+		'controller' => 'AdminAjax',
+		'action' => 'saveUsers',
+		'subtitle' => 'API',
+	],
+	'tasks/[0-9]{1,}' => [
+		'controller' => 'AdminAjax',
+		'action' => 'getTask',
+		'subtitle' => 'API',
+	],
+	'tasks/save' => [
+		'controller' => 'AdminAjax',
+		'action' => 'saveTask',
+		'subtitle' => 'API',
+	],
 	/* AJAX END */
 ];

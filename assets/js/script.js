@@ -47,6 +47,7 @@ function changeUser(ID = -1){
       fieldOffline = $('#off.modal_table tbody');
   if(ID == -1){
     $('#modal_user_form input[name=pass]').attr('required', '');
+    $('.modal_user_info').attr('style', 'display:none;');
     S_NAME = '';
     F_NAME = '';
     NAME = '';
@@ -58,6 +59,7 @@ function changeUser(ID = -1){
     OFFLINE = "";
   }else{
     $('#modal_user_form input[name=pass]').removeAttr('required');
+    $('.modal_user_info').removeAttr('style');
     let content = getContent('/users/'+ID);
     S_NAME = content.DATA.S_NAME;
     F_NAME = content.DATA.F_NAME;
