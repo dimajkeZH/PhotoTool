@@ -30,7 +30,7 @@
       background-color: #bb3d4e; }
     .main_wrapper .btn.red:hover {
       background-color: rgba(187, 61, 78, 0.8); }
-  .main_wrapper .modal_wnd_wrapper {
+  .main_wrapper .modal_wnd_wrapper, .main_wrapper .modal_wnd_photo_wrapper {
     background-color: rgba(0, 0, 0, 0.55);
     position: fixed;
     top: 0;
@@ -40,7 +40,7 @@
     height: 100vh;
     display: none;
     z-index: 14; }
-  .main_wrapper .modal_wnd_inner {
+  .main_wrapper .modal_wnd_inner, .main_wrapper .modal_wnd_photo_inner {
     background-color: #fff;
     top: 50%;
     left: 50%;
@@ -54,7 +54,7 @@
     box-shadow: 0px 0px 15px 2px #fff;
     border-radius: 5px;
     overflow: hidden; }
-    .main_wrapper .modal_wnd_inner .modal_wnd_head {
+    .main_wrapper .modal_wnd_inner .modal_wnd_head, .main_wrapper .modal_wnd_photo_inner .modal_wnd_head {
       padding: 20px 20px 20px 20px;
       background-color: #f2f2f2;
       width: 100%;
@@ -68,9 +68,9 @@
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
       justify-content: space-between; }
-    .main_wrapper .modal_wnd_inner .modal_wnd_content {
+    .main_wrapper .modal_wnd_inner .modal_wnd_content, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content {
       padding: 15px; }
-      .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_form {
+      .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_form, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_user_form {
         display: -webkit-flex;
         display: -moz-flex;
         display: -ms-flex;
@@ -88,50 +88,50 @@
         flex-wrap: wrap;
         padding: 10px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.4); }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_form .forma_group {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_form .forma_group, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_user_form .forma_group {
           width: 50%;
           padding: 5px 15px; }
-          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_form .forma_group label p span {
+          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_form .forma_group label p span, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_user_form .forma_group label p span {
             color: #bb3d4e; }
-          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_form .forma_group label input {
+          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_form .forma_group label input, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_user_form .forma_group label input {
             width: 100%;
             border: 1px solid #3697cd;
             border-radius: 3px;
             height: 20px;
             outline: 0px;
             padding: 0px 10px; }
-          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_form .forma_group label input:focus {
+          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_form .forma_group label input:focus, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_user_form .forma_group label input:focus {
             -webkit-box-shadow: 0px 0px 5px 0px #3697cd;
             box-shadow: 0px 0px 5px 0px #3697cd; }
-      .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info {
+      .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_user_info {
         padding: 0px 15px 10px 15px; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info .modal_user_info_title {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info .modal_user_info_title, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_user_info .modal_user_info_title {
           font-size: 18px;
           margin-top: 10px; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info .modal_user_info_subtitle {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info .modal_user_info_subtitle, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_user_info .modal_user_info_subtitle {
           font-size: 16px;
           margin-top: 10px; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info .modal_table_wrapper {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info .modal_table_wrapper, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_user_info .modal_table_wrapper {
           max-height: 200px;
           width: 100%; }
-          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info .modal_table_wrapper .modal_table {
+          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info .modal_table_wrapper .modal_table, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_user_info .modal_table_wrapper .modal_table {
             width: 100%;
             font-size: 14px;
             border-collapse: collapse;
             border: 1px solid #f2f2f2;
             position: relative;
             margin-bottom: 10px; }
-            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info .modal_table_wrapper .modal_table thead tr {
+            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info .modal_table_wrapper .modal_table thead tr, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_user_info .modal_table_wrapper .modal_table thead tr {
               background-color: #e8e8e8; }
-            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info .modal_table_wrapper .modal_table th, .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info .modal_table_wrapper .modal_table td {
+            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info .modal_table_wrapper .modal_table th, .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_user_info .modal_table_wrapper .modal_table td, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_user_info .modal_table_wrapper .modal_table th, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_user_info .modal_table_wrapper .modal_table td {
               border: 1px solid rgba(0, 0, 0, 0.2);
               padding: 5px;
               text-align: center; }
-      .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks {
+      .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks {
         width: 900px; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form {
           width: 100%; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head {
           display: -webkit-flex;
           display: -moz-flex;
           display: -ms-flex;
@@ -148,20 +148,20 @@
           -ms-flex-wrap: wrap;
           flex-wrap: wrap;
           border-bottom: 1px solid #999999; }
-          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group {
+          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group {
             width: 50%;
             padding: 5px 15px; }
-            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label p {
+            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label p, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label p {
               margin-bottom: 5px; }
-            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label input, .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label select {
+            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label input, .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label select, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label input, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label select {
               border: 1px solid #3697cd;
               outline: 0px;
               width: 100%;
               padding: 5px 10px; }
-            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label input:focus, .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label select:focus {
+            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label input:focus, .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label select:focus, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label input:focus, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group label select:focus {
               -webkit-box-shadow: 0px 0px 5px 0px #3697cd;
               box-shadow: 0px 0px 5px 0px #3697cd; }
-            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group.date label {
+            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group.date label, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group.date label {
               display: -webkit-flex;
               display: -moz-flex;
               display: -ms-flex;
@@ -174,12 +174,12 @@
               align-items: center;
               -ms-flex-wrap: wrap;
               flex-wrap: wrap; }
-              .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group.date label p {
+              .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group.date label p, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group.date label p {
                 width: 100%; }
-              .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group.date label input {
+              .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group.date label input, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_head .forma_group.date label input {
                 width: calc(50% - 10px);
                 margin: 0px 5px 0px 5px; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content {
           max-height: 400px;
           display: -webkit-flex;
           display: -moz-flex;
@@ -191,12 +191,12 @@
           -webkit-box-pack: center;
           -ms-flex-pack: center;
           justify-content: center; }
-          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags {
+          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags {
             width: 35%;
             border-right: 1px solid #999999; }
-            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox {
+            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox {
               margin: 10px 20px 5px 0px; }
-              .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label {
+              .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label {
                 display: inline-block;
                 vertical-align: middle;
                 display: -webkit-flex;
@@ -215,31 +215,31 @@
                 position: relative;
                 width: 100%;
                 cursor: pointer; }
-                .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type {
+                .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type {
                   width: 80%;
                   background-color: #3697cd;
                   padding: 7px;
                   color: #fff;
                   margin-left: 15px;
                   width: 85%; }
-                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.location {
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.location, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.location {
                     background: #336315; }
-                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.time {
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.time, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.time {
                     background: #ff740a; }
-                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.date {
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.date, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.date {
                     background: #168de2; }
-                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.datatime {
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.datatime, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.datatime {
                     background: -webkit-gradient(linear, left top, right top, from(#168de2), to(#ff740a));
                     background: -webkit-linear-gradient(left, #168de2, #ff740a);
                     background: -o-linear-gradient(left, #168de2, #ff740a);
                     background: linear-gradient(to right, #168de2, #ff740a); }
-                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.text {
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.text, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.text {
                     background: #858585; }
-                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.nubmer {
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.nubmer, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.nubmer {
                     background: #9e3b33; }
-                .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label input {
+                .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label input, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label input {
                   display: none; }
-                .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .checkbox_custom {
+                .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .checkbox_custom, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .checkbox_custom {
                   position: absolute;
                   height: 100%;
                   right: 5px;
@@ -248,12 +248,12 @@
                   display: inline-block;
                   vertical-align: middle;
                   text-shadow: 0px 0px 2px #bb3d4e; }
-                .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label input:checked + .checkbox_custom {
+                .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label input:checked + .checkbox_custom, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label input:checked + .checkbox_custom {
                   color: #00b449;
                   text-shadow: 0px 0px 5px #00b449; }
-          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper {
+          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper {
             width: 65%; }
-            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo {
+            .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo {
               width: 100%;
               display: -webkit-flex;
               display: -moz-flex;
@@ -270,50 +270,50 @@
               -ms-flex-wrap: wrap;
               flex-wrap: wrap;
               padding-right: 10px; }
-              .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox {
+              .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox {
                 margin-bottom: 5px;
                 width: 25%;
                 padding: 10px; }
-                .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label {
+                .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label {
                   display: inline-block;
                   vertical-align: middle;
                   position: relative;
                   cursor: pointer; }
-                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label img {
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label img, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label img {
                     width: 100%; }
-                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label input {
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label input, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label input {
                     display: none; }
-                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label .checkbox_custom {
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label .checkbox_custom, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label .checkbox_custom {
                     position: absolute;
                     top: 0;
                     right: 0;
                     z-index: 5;
                     width: 100%;
                     height: 100%; }
-                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label input:checked + .checkbox_custom {
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label input:checked + .checkbox_custom, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_photo_wrapper .modal_tasks_form_photo .photo_checkbox label input:checked + .checkbox_custom {
                     background: -webkit-radial-gradient(circle, #fff, #00b449);
                     background: -o-radial-gradient(circle, #fff, #00b449);
                     background: radial-gradient(circle, #fff, #00b449);
                     opacity: .7;
                     border: 1px solid #999999; }
-      .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop {
+      .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_drug_and_drop {
         width: 800px; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop #drop-area {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop #drop-area, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_drug_and_drop #drop-area {
           border: 2px solid #3697cd;
           border-radius: 20px;
           width: 100%;
           font-family: sans-serif;
           padding: 20px;
           max-height: 600px; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop #drop-area.highlight {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop #drop-area.highlight, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_drug_and_drop #drop-area.highlight {
           border-color: #2ea999; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop p {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop p, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_drug_and_drop p {
           margin-top: 0; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .my-form {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .my-form, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_drug_and_drop .my-form {
           margin-bottom: 10px; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .gallery_wrapper {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .gallery_wrapper, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_drug_and_drop .gallery_wrapper {
           max-height: 400px; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop #gallery {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop #gallery, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_drug_and_drop #gallery {
           margin-top: 10px;
           display: -webkit-flex;
           display: -moz-flex;
@@ -328,7 +328,7 @@
           -ms-flex-align: center;
           align-items: center;
           margin-right: 20px; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .button {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .button, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_drug_and_drop .button {
           display: inline-block;
           padding: 10px;
           background: #ccc;
@@ -336,17 +336,17 @@
           border-radius: 5px;
           border: 1px solid #ccc;
           margin-top: 10px; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .button:hover {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .button:hover, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_drug_and_drop .button:hover {
           background: #ddd; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop #fileElem {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop #fileElem, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_drug_and_drop #fileElem {
           display: none; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .img_box {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .img_box, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_drug_and_drop .img_box {
           position: relative;
           width: calc(25% - 20px);
           margin: 10px; }
-          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .img_box img {
+          .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .img_box img, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_drug_and_drop .img_box img {
             width: 100%; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .btn {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop .btn, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_drug_and_drop .btn {
           width: 25px;
           height: 25px;
           background-color: #bb3d4e;
@@ -357,9 +357,26 @@
           margin: 0px;
           font-size: 12px;
           padding: 0px; }
-        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop #progress-bar {
+        .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_drug_and_drop #progress-bar, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_drug_and_drop #progress-bar {
           width: calc(100% - 25px);
           margin: 10px; }
+  .main_wrapper .modal_wnd_photo_inner {
+    max-height: 80%;
+    padding: 20px;
+    max-width: 80%; }
+    .main_wrapper .modal_wnd_photo_inner .modal_wnd_photo_img {
+      max-width: 80vw;
+      max-height: 80vh; }
+      .main_wrapper .modal_wnd_photo_inner .modal_wnd_photo_img img {
+        max-height: calc(80vh - 40px);
+        max-width: calc(80vw - 40px);
+        min-width: 35vw;
+        min-height: 35vh; }
+      .main_wrapper .modal_wnd_photo_inner .modal_wnd_photo_img .btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        margin: 0px; }
   .main_wrapper .header {
     background: -webkit-gradient(linear, left top, right top, from(#3f4850), color-stop(25%, #3a4e59), color-stop(50%, #38545f), color-stop(75%, #43554d), to(#573d4e));
     background: -webkit-linear-gradient(left, #3f4850 0%, #3a4e59 25%, #38545f 50%, #43554d 75%, #573d4e 100%);
@@ -547,7 +564,8 @@
           position: relative;
           margin: 15px; }
           .main_wrapper .content_wrapper .main_content_info .photo_list .photo_list_item img {
-            width: 100%; }
+            width: 100%;
+            cursor: pointer; }
           .main_wrapper .content_wrapper .main_content_info .photo_list .photo_list_item .btn {
             position: absolute;
             top: 0;

@@ -44,7 +44,7 @@ $taggray: #858585
 			background-color: $red
 		&.red:hover
 			background-color: $redhover
-	.modal_wnd_wrapper
+	.modal_wnd_wrapper, .modal_wnd_photo_wrapper
 		background-color: rgba(0,0,0, .55)
 		position: fixed
 		top: 0
@@ -54,7 +54,7 @@ $taggray: #858585
 		height: 100vh
 		display: none
 		z-index: 14 
-	.modal_wnd_inner
+	.modal_wnd_inner, .modal_wnd_photo_inner
 		background-color: #fff  
 		top: 50%
 		left: 50%
@@ -327,7 +327,26 @@ $taggray: #858585
 				#progress-bar
 					width: calc(100% - 25px)
 					margin: 10px
-					
+	.modal_wnd_photo
+
+	.modal_wnd_photo_wrapper	
+	.modal_wnd_photo_inner
+		max-height: 80%
+		padding: 20px
+		max-width: 	80%	
+		.modal_wnd_photo_img
+			max-width: 80vw
+			max-height: 80vh		
+			img
+				max-height: calc(80vh - 40px)
+				max-width: calc(80vw - 40px)
+				min-width: 35vw
+				min-height: 35vh
+			.btn
+				position: absolute
+				top: 20px
+				right: 20px
+				margin: 0px
 					
 	.header
 		background: linear-gradient(to right, #3f4850 0%, #3a4e59 25%, #38545f 50%, #43554d 75%, #573d4e 100%)
@@ -479,7 +498,8 @@ $taggray: #858585
 					position: relative  
 					margin: 15px
 					img
-						width: 100% 
+						width: 100%
+						cursor: pointer	
 					.btn
 						position: absolute  
 						top: 0

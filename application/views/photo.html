@@ -52,37 +52,37 @@
 			<div class="main_content_info">
 				<div class="photo_list">
 					<div class="photo_list_item">
-						<img src="/assets/img/de.png" alt="">
+						<img onclick="modalPhotoOpen(this.src)" src="/assets/img/de.png" alt="">
 						<button class="btn red">
 							<span>X</span>
 						</button>
 					</div>
 					<div class="photo_list_item">
-						<img src="/assets/img/china.png" alt="">
+						<img onclick="modalPhotoOpen(this.src)" src="/assets/img/china.png" alt="">
 						<button class="btn red">
 							<span>X</span>
 						</button>
 					</div>
 					<div class="photo_list_item">
-						<img src="/assets/img/korea.png" alt="">
+						<img onclick="modalPhotoOpen(this.src)" src="/assets/img/korea.png" alt="">
 						<button class="btn red">
 							<span>X</span>
 						</button>
 					</div>
 					<div class="photo_list_item">
-						<img src="/assets/img/pizza.png" alt="">
+						<img onclick="modalPhotoOpen(this.src)" src="/assets/img/pizza.png" alt="">
 						<button class="btn red">
 							<span>X</span>
 						</button>
 					</div>
 					<div class="photo_list_item">
-						<img src="/assets/img/russia.png" alt="">
+						<img onclick="modalPhotoOpen(this.src)" src="/assets/img/catalog/66kBBpPTdzRFkSFfcMOwQkdVw30jGXhTrASYzCFuNYqhz5Ynfeg9HGnTGJRiE20K.png" alt="">
 						<button class="btn red">
 							<span>X</span>
 						</button>
 					</div>
 					<div class="photo_list_item">
-						<img src="/assets/img/sweden.png" alt="">
+						<img onclick="modalPhotoOpen(this.src)" src="/assets/img/catalog/xp9xeofdodh5F7M02LZ7MHIWJzLaoUM6Bi1C03gWrb2uFboXErLG7SwBbVhNlIAb.png" alt="">
 						<button class="btn red">
 							<span>X</span>
 						</button>
@@ -118,6 +118,18 @@
 				</div>
 			</div>
 		</div>
+		<div class="modal_wnd_photo">	
+			<div class="modal_wnd_photo_wrapper" id="photo_wrap" onclick="modalPhotoClose()">
+			</div>
+			<div class="modal_wnd_photo_inner" id="photo_window">
+				<div class="modal_wnd_photo_img">
+					<img src="" alt="">
+					<button onclick="modalPhotoClose()" class="btn red">
+						<p>X</p>
+					</button>
+				</div>
+			</div>
+		</div>
 		<div class="footer">
 			
 		</div>
@@ -126,5 +138,17 @@
 	<script src="/assets/js/slick/slick.min.js"></script>
 	<script src="/assets/js/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.js"></script>
 	<script src="/assets/js/script.js"></script>
+	<script type="text/javascript">
+		function modalPhotoOpen (img){
+			$(".modal_wnd_photo_img img")[0].src=img;
+			$(".modal_wnd_photo_inner").fadeIn(400);
+			$(".modal_wnd_photo_wrapper").fadeIn(400);
+		}
+		function modalPhotoClose (){
+			$(".modal_wnd_photo_inner").fadeOut(400);
+			$(".modal_wnd_photo_wrapper").fadeOut(400);
+		}
+		
+	</script>
 </body>
 </html>

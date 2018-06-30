@@ -43,6 +43,7 @@ function modalClose (){
 function taskListOpen (){
 	$(".task_list").toggleClass("active");
 }
+
 /* VARS */
 var typeMessage = Object.freeze({
   good : 1,
