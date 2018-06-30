@@ -144,30 +144,6 @@ function modalClose (){
 function taskListOpen (){
   $(".task_list").toggleClass("active");
 }
-<<<<<<< HEAD
-
-/* VARS */
-var typeMessage = Object.freeze({
-  good : 1,
-  common : 2,
-  bad : 3,
-});
-var classMessageBox = 'popup__message',
-  classMessage = 'message',
-  classMessageGood = 'good',
-  classMessageBad = 'bad',
-  classMessageCommon = 'common',
-  messageGoodTimeout = 2800,
-  messageBadTimeout = 3500,
-  messageCommonTimeout = 3100;
-  messageHide = 600;
-var classContentBox = 'main_content',
-  classSiteTree = 'main_nav',
-  classLoaderPage = 'loader_box',
-  loaderPageHide = 5; /* 3 - 12 */
-/* VARS END */
-=======
->>>>>>> 01d00d5654404d533a302d4eb510bf24dfaec942
 
 function showMessage(message, status = typeMessage.common){
   var curClassMessage, type;
@@ -265,6 +241,7 @@ function Ajax(uri, data = [], callback = ''){
     }
   });
 }
+
 function modalPhotoOpen (img){
 	$(".modal_wnd_photo_img img")[0].src=img;
 	$(".modal_wnd_photo_inner").fadeIn(400);
