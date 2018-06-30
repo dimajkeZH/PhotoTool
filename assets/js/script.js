@@ -265,4 +265,13 @@ function Ajax(uri, data = [], callback = ''){
     }
   });
 }
+function modalPhotoOpen (img){
+	$(".modal_wnd_photo_img img")[0].src=img;
+	$(".modal_wnd_photo_inner").fadeIn(400);
+	$(".modal_wnd_photo_wrapper").fadeIn(400);
+}
+function modalPhotoClose (){
+	$(".modal_wnd_photo_inner").fadeOut(400);
+	$(".modal_wnd_photo_wrapper").fadeOut(400);
+}
 /********************* FUNCTIONS END *********************/
