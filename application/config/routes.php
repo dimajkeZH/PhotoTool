@@ -41,6 +41,12 @@ return [
 	/* USER END */
 
 	/* ADMIN */
+	'admin' => [
+		'controller' => 'AdminMain',
+		'action' => 'tasks',
+		'subtitle' => 'Задания',
+	],
+
 	'admin/tasks' => [
 		'controller' => 'AdminMain',
 		'action' => 'tasks',
@@ -96,6 +102,7 @@ return [
 	'users/[0-9]{1,}' => [
 		'controller' => 'AdminAjax',
 		'action' => 'getUser',
+		'subtitle' => 'API',
 	],
 	/* AJAX END */
 ];

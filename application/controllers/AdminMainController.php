@@ -9,11 +9,6 @@ class AdminMainController extends AdminController {
 	static private $default_area = '/admin/tasks';
 	static private $auth_area = '/admin/auth';
 
-	private function render($content = [], $layout = 'admin'){
-		$this->view->layout = $layout;
-		$this->view->render($this->model->getHeaders($this->route), $content);
-	}
-
 	public function authAction() {
 		if(!$this->model->isAuth()){
 			$this->render([], 'auth');

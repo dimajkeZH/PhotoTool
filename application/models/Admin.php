@@ -36,7 +36,14 @@ class Admin extends Model {
 	}
 
 
-
+	public function getHeaders($route){
+		$return['TITLE'] = $this->TITLE;
+		if($route['subtitle']){
+			$return['SUBTITLE'] = $route['subtitle'];
+		}
+		return $return;
+	}
+	
 	//create new record in the db
 	public function sessionCreate($id_admin, $perm = false){
 		if($perm){
@@ -159,4 +166,7 @@ class Admin extends Model {
 		return base64_encode(hash_hmac($this->sha, $str, $this->sha_key, true));
 	}
 
+	public function isAjax(){
+    	return (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && (strtolower(getenv('HTTP_X_REQUESTED_WITH')) === 'xmlhttprequest'));
+	}
 }
