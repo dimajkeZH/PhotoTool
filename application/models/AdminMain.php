@@ -6,15 +6,7 @@ use application\models\Admin;
 
 class AdminMain extends Admin {
 
-	public $TITLE = 'webPHOTO';
-
-	public function getHeaders($route){
-		$return['TITLE'] = $this->TITLE;
-		if($route['subtitle']){
-			$return['SUBTITLE'] = $route['subtitle'];
-		}
-		return $return;
-	}
+	protected $TITLE = 'webPHOTO';
 
 	public function login(){
 		if(isset($_POST)){

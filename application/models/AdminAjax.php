@@ -6,6 +6,8 @@ use application\models\Admin;
 
 class AdminAjax extends Admin {
 
+	public $TITLE = 'API';
+
 	public function loadImage($file){
 		$oldName = pathinfo($file['name'])['filename'];
 		$tmpPath = $file['tmp_name'];
@@ -49,7 +51,7 @@ class AdminAjax extends Admin {
 		$return['ONLINE'] = $this->db->row($q, $params);
 		$q = 'SELECT * FROM USER_SESSIONS WHERE (ID_USER = :ID) AND (DT_DESTROY >= NOW())';
 		$return['OFFLINE'] = $this->db->row($q, $params);
-		exit(json_encode(['STATUS'=> true, 'DATA' => $return['DATA'], 'ONLINE' => $return['ONLINE'], 'OFFLINE' => $return['OFFLINE']]));
+		return (json_encode(['STATUS'=> true, 'DATA' => $return['DATA'], 'ONLINE' => $return['ONLINE'], 'OFFLINE' => $return['OFFLINE']]));
 	}
 
 	//send finally message to user

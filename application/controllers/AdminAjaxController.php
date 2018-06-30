@@ -79,9 +79,18 @@ class AdminAjaxController extends AdminController {
 		}
 	}
 
+	/* API GET */
 	public function getUserAction(){
-		$this->model->getUser($this->route);
+		$content = $this->model->getUser($this->route);
+		if($this->model->isAjax()){
+			exit($content);
+		}else{
+			echo '<title>'.$this->model->TITLE.'</title><pre>';
+			print_r(JSON_decode($content));
+			echo '</pre>';
+			exit();
+		}
 	}
-	
+	/* API GET END*/
 
 }

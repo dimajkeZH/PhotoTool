@@ -26,7 +26,7 @@
 								<td><span><?php echo $user['F_NAME']; ?></span></td>
 								<td><span><?php echo $user['TASK_COUNT']; ?></span></td>
 								<td><button class="btn blue" onclick="changeUser(<?php echo $user['ID']; ?>)">C</button></td>
-								<td><button class="btn red" onclick="deleteUSER(this, <?php echo $user['ID']; ?>)">X</button></td>
+								<td><button class="btn red" onclick="deleteUser(this, <?php echo $user['ID']; ?>)">X</button></td>
 							</tr>
 							<?php endforeach; ?>
 						</tbody>
