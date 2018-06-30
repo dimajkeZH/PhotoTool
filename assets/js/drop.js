@@ -99,7 +99,8 @@
 	    btn.classList.add('btn');
 	    btn.classList.add('red');
 	    btn.innerHTML = '<p>X</p>';
-	    btn.onclick=function(){deleteElement(this, file.name, file.id)};
+	    btn.setAttribute('onclick', 'deleteElement(this, "'+file.name+'", "'+file.id+'")');
+	    //btn.onclick=function(){deleteElement(this, file.name, file.id)};
 	    box.appendChild(btn);
 	    document.getElementById('gallery').appendChild(box);
 	  }
@@ -125,7 +126,7 @@
 	    		let src = parent.getElementsByTagName('img')[0].src;
 	    		let el = document.createElement("div");
 	    		el.classList.add('photo_list_item');
-	    		el.innerHTML = '<img src="'+src+'" alt="">';
+	    		el.innerHTML = '<img  onclick="modalPhotoOpen(this.src)" src="'+src+'" alt="">';
 	    		$('.photo_list').append(el);
 	    		parent.remove();
 	    		FILES.forEach(function(val, key){

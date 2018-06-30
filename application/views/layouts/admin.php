@@ -39,6 +39,7 @@
 			</div>
 		</div>
 		<?php echo $content; ?>
+		<div class="footer"></div>
 	</div>
 	<script src="/assets/js/jquery-3.3.1.min.js"></script>
 	<script src="/assets/js/slick/slick.min.js"></script>
