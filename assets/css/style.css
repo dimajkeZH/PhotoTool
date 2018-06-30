@@ -452,6 +452,8 @@
       padding: 0px 25px; }
       .main_wrapper .content_wrapper .main_content_head .main_content_head_title {
         font-size: 20px; }
+      .main_wrapper .content_wrapper .main_content_head .main_content_head_timer {
+        font-size: 20px; }
       .main_wrapper .content_wrapper .main_content_head .main_content_head_settings {
         display: -webkit-flex;
         display: -moz-flex;
