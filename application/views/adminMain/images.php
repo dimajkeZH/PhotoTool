@@ -1,6 +1,6 @@
 		<div class="content_wrapper">
 			<div class="main_content_head">
-				<p class="main_content_head_title">Список фотографий</p>
+				<p class="main_content_head_title">Фото</p>
 				<div class="main_content_head_settings">
 					<form>
 						<input type="text" placeholder="Значение тэга">
@@ -33,7 +33,7 @@
 					<div class="modal_drug_and_drop">
 						<div id="drop-area">
 	  						<form class="my-form">
-	   					 		<p>Загрузите несколько файлов сразу, просто перетащив изображения в модальное окно</p>
+	   					 		<p>Перетащи фото сюда</p>
 	   					 		<input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
 	   					 		<label class="button" for="fileElem">Выбирите несколько файлов</label>
 	  						</form>
