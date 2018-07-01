@@ -100,11 +100,7 @@ return [
 		'action' => 'delImage',
 	],
 
-	'users/[0-9]{1,}' => [
-		'controller' => 'AdminAjax',
-		'action' => 'getUser',
-		'subtitle' => 'API',
-	],
+	
 	'users/del/[0-9]{1,}' => [
 		'controller' => 'AdminAjax',
 		'action' => 'delUser',
@@ -116,11 +112,7 @@ return [
 		'subtitle' => 'API',
 	],
 
-	'tasks/[0-9]{1,}' => [
-		'controller' => 'AdminAjax',
-		'action' => 'getTask',
-		'subtitle' => 'API',
-	],
+	
 	'tasks/save' => [
 		'controller' => 'AdminAjax',
 		'action' => 'saveTask',
@@ -138,4 +130,22 @@ return [
 		'subtitle' => 'API',
 	],
 	/* AJAX END */
+
+	/* API GET_DATA */
+	'users/[0-9]{1,}' => [
+		'controller' => 'AdminAjax',
+		'action' => 'getUser',
+		'subtitle' => 'API',
+	],
+	'tasks/[0-9]{1,}' => [
+		'controller' => 'AdminAjax',
+		'action' => 'getTask',
+		'subtitle' => 'API',
+	],
+	'tagtypes' => [
+		'controller' => 'AdminAjax',
+		'action' => 'getTagTypes',
+		'subtitle' => 'API',
+	],
+	/* API GET_DATA END */
 ];

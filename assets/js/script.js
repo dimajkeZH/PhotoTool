@@ -133,7 +133,14 @@ function changeUser(ID = -1){
 
 function addTag() {
   let index = maxTagFormId();
-  let tagItem = '<tr class="table_item"><form id="data" name="newform'+index+'"><td><span>NEW</span><input for="newform'+index+'" name="ID" type="text" value="-1" hidden></td><td><select name="TYPE" for="newform'+index+'"><option value="0">--- Выберите значение ---</option></select></td><td><input type="text" for="newform'+index+'" value="" name="VALUE" /></td><td><button class="btn red" onclick="deleteNewTag(this)">X</button></td></form></tr>';
+  let options = '';
+  let optionsData = getContent('/tagtypes');
+  if(optionsData.STATUS){
+    optionsData.DATA.forEach(function(value){
+      options += '<option value="'+value.VALUE+'">'+value.NAME+'</option>';
+    });
+  }
+  let tagItem = '<tr class="table_item"><form id="data" name="newform'+index+'"><td><span>NEW</span><input for="newform'+index+'" name="ID" type="text" value="-1" hidden></td><td><select name="TYPE" for="newform'+index+'"><option value="0">--- Выберите значение ---</option>'+options+'</select></td><td><input type="text" for="newform'+index+'" value="" name="VALUE" /></td><td><button class="btn red" onclick="deleteNewTag(this)">X</button></td></form></tr>';
   let parent = $('.main_table tbody');
   parent.append(tagItem);
 }
@@ -160,12 +167,12 @@ function maxTagFormId() {
   console.log(ID)
   return ID;
 }
-function deleteTag(ID) {
+function deleteTag(THIS, ID) {
   if (confirm("Действительно удалить этот тег?")) {
     let content = getContent('/tags/del/'+ID);
-    console.log(content);
     if(content != undefined){
       if(content.status){
+        $(THIS).parent().parent().remove();
         showMessage(content.message, typeMessage.good);
       }else{
         showMessage(content.message, typeMessage.bad);

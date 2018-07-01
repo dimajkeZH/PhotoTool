@@ -31,7 +31,7 @@
 									</select>
 								</td>
 								<td><input for="form<?php echo $key+1; ?>" name="VALUE" type="text" value="<?php echo $tag['VALUE']; ?>"></td>
-								<td><button class="btn red" onclick="deleteTag(<?php echo $tag['ID']; ?>); return false;">X</button></td>
+								<td><button class="btn red" onclick="deleteTag(this, <?php echo $tag['ID']; ?>); return false;">X</button></td>
 								</form>
 							</tr>
 							<?php endforeach; ?>

@@ -40,27 +40,23 @@ class AdminAjax extends Admin {
 		return $this->db->bool($q, $params);
 	}
 
-	public function getUser($route){
-		$ID = $route['param'];
-		$q = 'SELECT UA.F_NAME, UA.S_NAME, UA.NAME, UA.MAIL, UA.PHONE, (SELECT COUNT(TL.ID) FROM TASK_LIST as TL WHERE TL.ID_USER = UA.ID) as COUNT_TASKS FROM USER_ACCOUNTS as UA WHERE UA.ID = :ID';
-		$params = [
-			'ID' => $ID,
-		];
-		$return['DATA'] = $this->db->row($q, $params)[0];
-		$q = 'SELECT * FROM USER_SESSIONS WHERE (ID_USER = :ID) AND (DT_DESTROY < NOW())';
-		$return['ONLINE'] = $this->db->row($q, $params);
-		$q = 'SELECT * FROM USER_SESSIONS WHERE (ID_USER = :ID) AND (DT_DESTROY >= NOW())';
-		$return['OFFLINE'] = $this->db->row($q, $params);
-		return (json_encode(['STATUS'=> true, 'DATA' => $return['DATA'], 'ONLINE' => $return['ONLINE'], 'OFFLINE' => $return['OFFLINE']]));
-	}
-
 	public function delUser($route){
 		$ID = $route['param'];
-		$q = 'DELETE FROM USER_ACCOUNTS WHERE ID = :ID';
-		$params = [
-			'ID' => $ID
+		$tran = [
+			0 => [
+				'sql' => 'DELETE FROM USER_ACCOUNTS WHERE ID = :ID',
+				'params' => [
+					'ID' => $ID
+				],
+			],
+			1 => [
+				'sql' => 'DELETE FROM USER_SESSIONS WHERE ID_USER = :ID',
+				'params' => [
+					'ID' => $ID
+				],
+			],
 		];
-		return $this->db->bool($q, $params);
+		return $this->db->transaction($tran);
 	}
 	public function saveUser($post){
 		$ID = $post['ID'];
@@ -95,12 +91,73 @@ class AdminAjax extends Admin {
 	}
 
 	public function delTag($route){
-		
+		$ID = $route['param'];
+		$q = 'DELETE FROM TAG_LIST WHERE ID = :ID';
+		$params = [
+			'ID' => $ID
+		];
+		return $this->db->bool($q, $params);
 	}
 	public function saveTags($post){
-		
+		$tran = [];
+		foreach($post as $key => $val){
+			if($val['ID'] == -1){
+				$sql = 'INSERT INTO TAG_LIST (VALUE, VAL_TYPE) VALUES (:VALUE, :VAL_TYPE)';
+				$params = [
+					'VALUE' => $val['VALUE'],
+					'VAL_TYPE' => $val['TYPE'],
+				];
+			}else{
+				$sql = 'UPDATE TAG_LIST SET VALUE = :VALUE, VAL_TYPE = :VAL_TYPE WHERE ID = :ID';
+				$params = [
+					'VALUE' => $val['VALUE'],
+					'VAL_TYPE' => $val['TYPE'],
+					'ID' => $val['ID'],
+				];
+			}
+			$tran[$key] = [
+				'sql' => $sql,
+				'params' => $params
+			];
+		}
+		return $this->db->transaction($tran);
 	}
 
+
+	/* API */
+	public function getUser($route){
+		$ID = $route['param'];
+		$q = 'SELECT UA.F_NAME, UA.S_NAME, UA.NAME, UA.MAIL, UA.PHONE, (SELECT COUNT(TL.ID) FROM TASK_LIST as TL WHERE TL.ID_USER = UA.ID) as COUNT_TASKS FROM USER_ACCOUNTS as UA WHERE UA.ID = :ID';
+		$params = [
+			'ID' => $ID,
+		];
+		$return['DATA'] = $this->db->row($q, $params)[0];
+		$q = 'SELECT * FROM USER_SESSIONS WHERE (ID_USER = :ID) AND (DT_DESTROY < NOW())';
+		$return['ONLINE'] = $this->db->row($q, $params);
+		$q = 'SELECT * FROM USER_SESSIONS WHERE (ID_USER = :ID) AND (DT_DESTROY >= NOW())';
+		$return['OFFLINE'] = $this->db->row($q, $params);
+		return json_encode(['STATUS'=> true, 'DATA' => $return['DATA'], 'ONLINE' => $return['ONLINE'], 'OFFLINE' => $return['OFFLINE']]);
+	}
+	public function getTask($route){
+		$ID = $route['param'];
+		$q = '';
+		//$q = 'SELECT UA.F_NAME, UA.S_NAME, UA.NAME, UA.MAIL, UA.PHONE, (SELECT COUNT(TL.ID) FROM TASK_LIST as TL WHERE TL.ID_USER = UA.ID) as COUNT_TASKS FROM USER_ACCOUNTS as UA WHERE UA.ID = :ID';
+		$params = [
+			'ID' => $ID,
+		];
+		$return['DATA'] = $this->db->row($q, $params)[0];
+		//$q = 'SELECT * FROM USER_SESSIONS WHERE (ID_USER = :ID) AND (DT_DESTROY < NOW())';
+		$return['ONLINE'] = $this->db->row($q, $params);
+		//$q = 'SELECT * FROM USER_SESSIONS WHERE (ID_USER = :ID) AND (DT_DESTROY >= NOW())';
+		$return['OFFLINE'] = $this->db->row($q, $params);
+		return json_encode(['STATUS'=> true, 'DATA' => $return['DATA'], 'ONLINE' => $return['ONLINE'], 'OFFLINE' => $return['OFFLINE']]);
+	}
+	public function getTagTypes(){
+		$q = 'SELECT NAME, VALUE FROM TAG_TYPES';
+		$return['TAG_LIST'] = $this->db->row($q);
+		return json_encode(['STATUS'=> true, 'DATA' => $return['TAG_LIST']]);
+	}
+	/* API END*/
 	//send finally message to user
 	public function message($status, $message, $id = -1){
 		exit(json_encode(['status' => $status, 'message' => $message, 'id' => $id]));

@@ -45,18 +45,6 @@ class AdminAjaxController extends AdminController {
 	}
 
 
-
-	public function getUserAction(){
-		$content = $this->model->getUser($this->route);
-		if($this->model->isAjax()){
-			exit($content);
-		}else{
-			echo '<title>'.$this->model->TITLE.'</title><pre>';
-			print_r(JSON_decode($content));
-			echo '</pre>';
-			exit();
-		}
-	}
 	public function delUserAction(){
 		if($this->model->delUser($this->route)){
 			$this->model->message(true, self::MESSAGE__DELETE_GOOD);
@@ -88,4 +76,40 @@ class AdminAjaxController extends AdminController {
 			$this->model->message(false, self::MESSAGE__CHANGE_BAD);
 		}
 	}
+
+	/* API */
+	public function getUserAction(){
+		$content = $this->model->getUser($this->route);
+		if($this->model->isAjax()){
+			exit($content);
+		}else{
+			echo '<title>'.$this->model->TITLE.'</title><pre>';
+			print_r(JSON_decode($content));
+			echo '</pre>';
+			exit();
+		}
+	}
+	public function getTaskAction(){
+		$content = $this->model->getTask($this->route);
+		if($this->model->isAjax()){
+			exit($content);
+		}else{
+			echo '<title>'.$this->model->TITLE.'</title><pre>';
+			print_r(JSON_decode($content));
+			echo '</pre>';
+			exit();
+		}
+	}
+	public function getTagTypesAction(){
+		$content = $this->model->getTagTypes();
+		if($this->model->isAjax()){
+			exit($content);
+		}else{
+			echo '<title>'.$this->model->TITLE.'</title><pre>';
+			print_r(JSON_decode($content));
+			echo '</pre>';
+			exit();
+		}
+	}
+	/* API END */
 }
