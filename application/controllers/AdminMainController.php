@@ -15,7 +15,6 @@ class AdminMainController extends AdminController {
 		}else{
 			$this->view->redirect(self::$default_area);
 		}
-		
 	}
 
 	public function loginAction() {

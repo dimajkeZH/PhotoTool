@@ -6,22 +6,22 @@ use application\controllers\UserController;
 
 class UserMainController extends UserController {
 
-	private $default_area = 'pairs';
-
-	private function render($content = []){
-		$this->view->render($this->model->getHeaders($this->route), $content);
-	}
+	static private $default_area = '/tasks';
+	static private $auth_area = '/auth';
 
 	public function authAction() {
-		$this->view->layout = 'auth';
-		$this->render();
+		if(!$this->model->isAuth()){
+			$this->render([], 'auth');
+		}else{
+			$this->view->redirect(self::$default_area);
+		}
 	}
 
 	public function loginAction() {
 		if($this->model->login()){
-			$this->view->redirect("/$default_area");
+			$this->view->redirect(self::$default_area);
 		}else{
-			$this->view->redirect('/auth');
+			$this->view->redirect(self::$auth_area);
 		}
 	}
 
@@ -32,7 +32,7 @@ class UserMainController extends UserController {
 
 	public function tasksAction() {
 		if($this->model->isAuth()){
-			//$this->render($this->model->getContent($this->route));
+			$this->render();
 		}else{
 			$this->logout();
 		}
@@ -40,7 +40,7 @@ class UserMainController extends UserController {
 
 	public function taskAction() {
 		if($this->model->isAuth()){
-			//$this->render($this->model->getContent($this->route));
+			$this->render();
 		}else{
 			$this->logout();
 		}
@@ -49,7 +49,7 @@ class UserMainController extends UserController {
 
 	private function logout(){
 		$this->model->logout();
-		$this->view->redirect('/auth');
+		$this->view->redirect(self::$auth_area);
 	}
 
 }

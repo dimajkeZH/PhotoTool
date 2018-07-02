@@ -44,6 +44,7 @@
 	<script src="/assets/js/jquery-3.3.1.min.js"></script>
 	<script src="/assets/js/slick/slick.min.js"></script>
 	<script src="/assets/js/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.js"></script>
-	<script src="/assets/js/script.js"></script>
+	<script src="/assets/js/common.js"></script>
+	<script src="/assets/js/admin.js"></script>
 </body>
 </html>

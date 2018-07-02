@@ -6,7 +6,7 @@ return [
 	'' => [
 		'controller' => 'UserMain',
 		'action' => 'tasks',
-		'subtitle' => '',
+		'subtitle' => 'Задания',
 	],
 
 	'tasks' => [
@@ -15,7 +15,7 @@ return [
 		'subtitle' => 'Задания',
 	],
 
-	'tasks/[0-9]{1,}' => [
+	'task/[0-9]{1,}' => [
 		'controller' => 'UserMain',
 		'action' => 'task',
 		'subtitle' => 'Задание',

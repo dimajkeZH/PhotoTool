@@ -12,33 +12,12 @@ class UserAjaxController extends UserController {
 	const MESSAGE__CHANGE_GOOD = 'Данные успешно изменены';
 	const MESSAGE__CHANGE_BAD = 'Изменение данных не произошло';
 
+	const MESSAGE__SAVE_GOOD = 'Данные успешно сохранены';
+	const MESSAGE__SAVE_BAD = 'Сохранение данных не произошло';
+
 	const MESSAGE__DELETE_GOOD = 'Данные успешно удалены';
 	const MESSAGE__DELETE_BAD = 'Удаление данных не произошло';
 
 	private $post;
-
-	private function settings(){
-		
-	}
-
-	public function delRowAction(){
-		$this->post = $_POST;
-		if($this->model->delRow($this->post)){
-			$this->model->message(true, self::MESSAGE__DELETE_GOOD);
-		}else{
-			$this->model->message(false, self::MESSAGE__DELETE_BAD);
-		}
-	}
-
-	public function saveAction(){
-		$this->post = $_POST;
-		if($this->post){
-			if($this->model->save($this->post)){
-				$this->model->message(true, self::MESSAGE__CHANGE_GOOD);
-			}$this->model->message(false, self::MESSAGE__CHANGE_BAD);
-		}else{
-			$this->model->message(false, self::MESSAGE__NO_VALUES);
-		}
-	}
 
 }
