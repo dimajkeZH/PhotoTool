@@ -68,6 +68,7 @@ function saveUserAfter(text, status){
   if(status){
     modalClose();
     showMessage(text, typeMessage.good);
+    scrollDown();
   }else{
     showMessage(text, typeMessage.bad);
   }
@@ -142,16 +143,7 @@ function addTag() {
   let tagItem = '<tr class="table_item"><form id="data" name="newform'+index+'"><td><span>NEW</span><input for="newform'+index+'" name="ID" type="text" value="-1" hidden></td><td><select name="TYPE" for="newform'+index+'"><option value="0">--- Выберите значение ---</option>'+options+'</select></td><td><input type="text" for="newform'+index+'" value="" name="VALUE" /></td><td><button class="btn red" onclick="deleteNewTag(this)">X</button></td></form></tr>';
   let parent = $('.main_table tbody');
   parent.append(tagItem);
-  let wrapper = $('.main_content_info');
-  let scrollElement = $('#mCSB_1_container');
-  let wrapperHeight = wrapper.height();
-  let scrollElementHeight = scrollElement.height();
-  let tableItemHeight = $('.table_item').height();
-  if(scrollElementHeight > wrapperHeight){
-    
-    scrollElement.css('top', -(scrollElementHeight - wrapperHeight));
-  }
-  console.log(scrollElement.css('top'));
+  scrollDown();
 }
 function deleteNewTag(THIS) {
   $(THIS).parent().parent().remove();

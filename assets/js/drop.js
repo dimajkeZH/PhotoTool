@@ -135,7 +135,9 @@
 						return;
 					}
 				});
+				cancelUpload();
 	    		showMessage(data.message, typeMessage.good);
+	    		scrollDown();
 	    	}else{
 	    		showMessage(data.message, typeMessage.bad);
 	    	}
@@ -155,6 +157,7 @@
 		if(FILES != undefined){
 			initializeProgress(FILES.length);
 			FILES.forEach(uploadFile);
+
 		}	
 	}
 

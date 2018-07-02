@@ -470,7 +470,9 @@
       .main_wrapper .content_wrapper .main_content_head .main_content_head_title {
         font-size: 20px; }
       .main_wrapper .content_wrapper .main_content_head .main_content_head_timer {
-        font-size: 20px; }
+        font-size: 20px;
+        padding: 5px 10px;
+        border: 2px dashed #bb3d4e; }
       .main_wrapper .content_wrapper .main_content_head .main_content_head_settings {
         display: -webkit-flex;
         display: -moz-flex;

@@ -41,7 +41,7 @@
 			<div class="main_content_head">
 				<p class="main_content_head_title">Пользователи</p>
 				<div class="main_content_head_settings">
-					<button onclick="modalOpen()" class="btn green">Добавить</button>
+					<button onclick="changeUser()" class="btn green">Добавить</button>
 				</div>
 			</div>
 			<div class="main_content_info">
@@ -94,10 +94,10 @@
 			<div class="modal_wnd_inner" id="window">
 				<div class="modal_wnd_head">
 					<button onclick="modalClose()" class="btn red">Отмена</button>
-					<button form="modal_user_form" class="btn green">Сохранить</button>
+					<button onclick="saveUser()" class="btn green">Сохранить</button>
 				</div>
 				<div class="modal_wnd_content">
-						<form class="modal_user_form" id="modal_user_form" action="">
+					<form class="modal_user_form" id="modal_user_form" >
 							<div class="forma_group">
 								<label>
 									<p>Фамилия </p>
@@ -134,8 +134,8 @@
 									<input type="text" name="phon">
 								</label>
 							</div>
-						</form>
-						<div class="modal_user_info">
+					</form>
+					<div class="modal_user_info">
 							<p class="modal_user_info_title">Количество заданий: <span>4</span></p>
 							<p class="modal_user_info_title">Сейчас онлайн: </p>
 							<div class="modal_table_wrapper">
@@ -315,7 +315,7 @@
 									</tbody>
 								</table>
 							</div>
-						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -326,6 +326,7 @@
 	<script src="/assets/js/jquery-3.3.1.min.js"></script>
 	<script src="/assets/js/slick/slick.min.js"></script>
 	<script src="/assets/js/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.js"></script>
-	<script src="/assets/js/script.js"></script>
+	<script src="/assets/js/common.js"></script>
+	<script src="/assets/js/admin.js"></script>
 </body>
 </html>

@@ -117,4 +117,13 @@ function Ajax(uri, data = [], callback = ''){
     }
   });
 }
+function scrollDown() {
+  let wrapper = $('.main_content_info');
+  let scrollElement = $('#mCSB_1_container');
+  let wrapperHeight = wrapper.height();
+  let scrollElementHeight = scrollElement.height();
+  if(scrollElementHeight > wrapperHeight){
+    scrollElement.css('top', -(scrollElementHeight - wrapperHeight));
+  }
+}
 /********************* FUNCTIONS END *********************/
