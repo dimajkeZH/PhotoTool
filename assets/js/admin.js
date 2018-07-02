@@ -148,8 +148,10 @@ function addTag() {
   let scrollElementHeight = scrollElement.height();
   let tableItemHeight = $('.table_item').height();
   if(scrollElementHeight > wrapperHeight){
-    scrollElement.css('top', scrollElement.css('top').replace(/[^-\d\.]/g, '') - tableItemHeight);
+    
+    scrollElement.css('top', -(scrollElementHeight - wrapperHeight));
   }
+  console.log(scrollElement.css('top'));
 }
 function deleteNewTag(THIS) {
   $(THIS).parent().parent().remove();
