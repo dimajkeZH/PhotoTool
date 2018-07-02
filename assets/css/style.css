@@ -237,6 +237,8 @@
                     background: #858585; }
                   .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.nubmer, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.nubmer {
                     background: #9e3b33; }
+                  .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.address, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .tag_type.address {
+                    background: #2ea999; }
                 .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label input, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label input {
                   display: none; }
                 .main_wrapper .modal_wnd_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .checkbox_custom, .main_wrapper .modal_wnd_photo_inner .modal_wnd_content .modal_tasks .modal_tasks_form_content .modal_tasks_form_tags .tag_checkbox label .checkbox_custom {
@@ -740,6 +742,8 @@
                       background: #858585; }
                     .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper .tag_checkbox label .tag_type.nubmer {
                       background: #9e3b33; }
+                    .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper .tag_checkbox label .tag_type.address {
+                      background: #2ea999; }
                   .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper .tag_checkbox label input {
                     display: none; }
                   .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info .user_task_info_tags .tags_wrapper .tag_checkbox label .checkbox_custom {
