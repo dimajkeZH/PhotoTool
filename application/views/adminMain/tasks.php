@@ -88,11 +88,11 @@
 			<div class="modal_wnd_inner" id="window">
 				<div class="modal_wnd_head">
 					<button onclick="modalClose()" class="btn red">Отмена</button>
-					<button form="" class="btn green">Сохранить</button>
+					<button form="modal_tasks_form" class="btn green">Сохранить</button>
 				</div>
 				<div class="modal_wnd_content">
 					<div class="modal_tasks">
-						<form class="modal_tasks_form" action="">
+						<form id="modal_tasks_form" class="modal_tasks_form" action="">
 							<div class="modal_tasks_form_head">
 								<div class="forma_group">
 									<label>
