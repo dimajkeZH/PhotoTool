@@ -247,4 +247,7 @@ function modalPhotoClose (){
 	$(".modal_wnd_photo_inner").fadeOut(400);
 	$(".modal_wnd_photo_wrapper").fadeOut(400);
 }
+function changePhoto(img) {
+  $(".info_photo_item img")[0].crc=img;
+}
 /********************* FUNCTIONS END *********************/

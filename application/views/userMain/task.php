@@ -2,7 +2,7 @@
 						<div class="sidebar">
 							<?php foreach($TASK_DATA['TASK_IMAGES'] as $key => $val): ?>
 							<div class="sidebar_item">
-								<img src="/assets/img/catalog/<?php echo $val['PATH']; ?>.png" alt="<?php echo $val['NAME']; ?>">
+								<img onclick="changeImg(this.src)" src="/assets/img/catalog/<?php echo $val['PATH']; ?>.png" alt="<?php echo $val['NAME']; ?>">
 								<button class="btn green"><span>&#10004;</span></button>
 							</div>
 							<?php endforeach; ?>

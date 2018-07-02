@@ -43,4 +43,7 @@ function redirect(url = ''){
 	//window.location.href = url;
 	window.location.replace(url);
 }
+function changeImg(img) {
+  $(".info_photo_item img")[0].src=img;
+}
 /********************* KEYDOWN END *********************/

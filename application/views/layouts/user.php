@@ -28,7 +28,8 @@
 				<p class="main_content_head_title"><?php echo ((isset($TASK_NUMBER))?'Задание номер: <span>'.$TASK_NUMBER.'</span>':'Задание не выбрано'); ?></p>
 				<p class="main_content_head_timer"><span id="timer_hour">00</span>:<span id="timer_min">00</span>:<span id="timer_sec">00</span></p>
 				<div class="main_content_head_settings">
-					<button onclick="taskListOpen()" class="btn green">Список заданий</button>
+					<button class="btn green">Сохранить</button>
+					<button onclick="taskListOpen()" class="btn blue">Список заданий</button>
 				</div>
 			</div>
 			<div class="user_main_content_info">
