@@ -32,7 +32,7 @@ class UserMainController extends UserController {
 
 	public function tasksAction() {
 		if($this->model->isAuth()){
-			$this->render();
+			$this->render($this->model->getTaskList());
 		}else{
 			$this->logout();
 		}
@@ -40,7 +40,7 @@ class UserMainController extends UserController {
 
 	public function taskAction() {
 		if($this->model->isAuth()){
-			$this->render();
+			$this->render($this->model->getTask($this->route));
 		}else{
 			$this->logout();
 		}
