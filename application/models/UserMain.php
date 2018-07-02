@@ -42,29 +42,31 @@ class UserMain extends User {
 	}
 
 	public function getTask($route){
-		$return['TASK_LIST'] = $this->getTaskList()['TASK_LIST'];
+		$result['TASK_LIST'] = $this->getTaskList()['TASK_LIST'];
 
-		$q = 'SELECT TIT.ID_TAG FROM TASK_INNER_TAGS as TIT WHERE TIT.ID_TASK = :ID_TASK';
+		$q = 'SELECT TIT.ID_TAG, TL.VALUE, TL.VAL_TYPE FROM TASK_INNER_TAGS as TIT INNER JOIN TAG_LIST as TL ON TL.ID = TIT.ID_TAG WHERE TIT.ID_TASK = :ID_TASK';
 		$params = [
 			'ID_TASK' => $route['param']
 		];
-		$return['TASK_DATA']['TASK_TAGS'] = $this->db->row($q, $params);
+		$result['TASK_DATA']['TASK_TAGS'] = $this->db->row($q, $params);
 
-		$q = 'SELECT TTI.ID_IMAGE FROM TASK_INNER_IMAGES as TII WHERE TII.ID_TASK = :ID_TASK';
+		$q = 'SELECT TII.ID, TII.ID_IMAGE, IL.NAME, IL.PATH FROM TASK_INNER_IMAGES as TII INNER JOIN IMAGE_LIST as IL ON IL.ID = TII.ID_IMAGE WHERE TII.ID_TASK = :ID_TASK';
 		$params = [
 			'ID_TASK' => $route['param']
 		];
-		$return['TASK_DATA']['TASK_IMAGES'] = $this->db->row($q, $params);
+		$result['TASK_DATA']['TASK_IMAGES'] = $this->db->row($q, $params);
 
-		/*
-		$q = 'SELECT * FROM TASK_INNER_IMAGE_TAGS ';
-		$params = [
-			'ID_TASK' => $route['param']
-		];
-		$return['TASK_DATA']['TASK_IMAGES']['TAGS'] = $this->db->row($q, $params);
-		*/
-	
-		debug($return);
+		$q = 'SELECT ID_TASK_TAG as ID FROM TASK_INNER_IMAGE_TAGS WHERE ID_TASK_IMAGE = :ID_IMAGE';
+		foreach($result['TASK_DATA']['TASK_IMAGES'] as $key => $val){
+			$params = [
+				'ID_IMAGE' => $val['ID']
+			];
+			$result['TASK_DATA']['TASK_IMAGES'][$key]['TAGS'] = $this->db->row($q, $params);
+		}
+
+		//$result['TASK_DATA'] = json_encode($result['TASK_DATA']);
+		//debug($result);
+		$return = $result;
 		return $return;
 	}
 }
