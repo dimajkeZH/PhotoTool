@@ -42,17 +42,23 @@ class UserMain extends User {
 	}
 
 	public function getTask($route){
+		$ID = $route['param'];
 		$result['TASK_LIST'] = $this->getTaskList()['TASK_LIST'];
 
+		$q = 'SELECT DT_END FROM TASK_LIST WHERE ID = :ID';
+		$params = [
+			'ID' => $ID
+		];
+		$result['TASK_DATA']['DT_END'] = $this->db->column($q, $params);
 		$q = 'SELECT TIT.ID_TAG, TL.VALUE, TL.VAL_TYPE FROM TASK_INNER_TAGS as TIT INNER JOIN TAG_LIST as TL ON TL.ID = TIT.ID_TAG WHERE TIT.ID_TASK = :ID_TASK';
 		$params = [
-			'ID_TASK' => $route['param']
+			'ID_TASK' => $ID
 		];
 		$result['TASK_DATA']['TASK_TAGS'] = $this->db->row($q, $params);
 
 		$q = 'SELECT TII.ID, TII.ID_IMAGE, IL.NAME, IL.PATH FROM TASK_INNER_IMAGES as TII INNER JOIN IMAGE_LIST as IL ON IL.ID = TII.ID_IMAGE WHERE TII.ID_TASK = :ID_TASK';
 		$params = [
-			'ID_TASK' => $route['param']
+			'ID_TASK' => $ID
 		];
 		$result['TASK_DATA']['TASK_IMAGES'] = $this->db->row($q, $params);
 

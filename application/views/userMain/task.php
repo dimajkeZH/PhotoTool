@@ -47,3 +47,13 @@
 							</div>
 						</div>
 					</div>
+					<script>
+						var endDateTime = '<?php echo $TASK_DATA['DT_END']; ?>';
+						let end = new Date(endDateTime).getTime();
+						let msec = end - Date.now();
+						let sec = Math.floor(msec / 1000);
+						console.log(sec);
+						let min = sec / 60;
+						console.log(min);
+						console.log(min.split('.'));
+					</script>
