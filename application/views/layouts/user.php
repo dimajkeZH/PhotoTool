@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="/assets/js/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.css" />
 </head>
 <body>
+	<div class="popup__message"></div>
 	<div class="main_wrapper">
 		<div class="header">
 			<div class="header_logo">
@@ -28,7 +29,7 @@
 				<p class="main_content_head_title"><?php echo ((isset($TASK_NUMBER))?'Задание номер: <span>'.$TASK_NUMBER.'</span>':'Задание не выбрано'); ?></p>
 				<p class="main_content_head_timer"><span id="timer_hour">00</span>:<span id="timer_min">00</span>:<span id="timer_sec">00</span></p>
 				<div class="main_content_head_settings">
-					<?php if(isset($TASK_NUMBER)): ?><button class="btn green">Сохранить</button><?php endif; ?>
+					<?php if(isset($TASK_NUMBER)): ?><button class="btn green" onclick="saveTask(<?php echo $TASK_NUMBER; ?>)">Сохранить</button><?php endif; ?>
 					<button onclick="taskListOpen()" class="btn blue">Список заданий</button>
 				</div>
 			</div>

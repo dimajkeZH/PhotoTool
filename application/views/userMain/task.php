@@ -2,8 +2,8 @@
 						<div class="sidebar">
 							<?php foreach($TASK_DATA['TASK_IMAGES'] as $key => $val): ?>
 							<div class="sidebar_item">
-								<img onclick="changeImg(this.src)" src="/assets/img/catalog/<?php echo $val['PATH']; ?>.png" alt="<?php echo $val['NAME']; ?>">
-								<button class="btn green"><span>&#10004;</span></button>
+								<img onclick="changeImg(this, this.src, <?php echo $val['ID']; ?>)" src="/assets/img/catalog/<?php echo $val['PATH']; ?>.png" alt="<?php echo $val['NAME']; ?>">
+								<button class="btn green<?php echo (isset($val['TAGS']) && (count($val['TAGS']) > 0))?' active':''; ?>"><span>&#10004;</span></button>
 							</div>
 							<?php endforeach; ?>
 						</div>
@@ -39,7 +39,7 @@
 								<div class="tag_checkbox">
 									<label>
 										<span class="tag_type <?php echo tagType($val['VAL_TYPE']); ?>"><?php echo $val['VALUE']; ?></span>
-										<input value="<?php echo $val['ID_TAG']; ?>" name="TAG<?php echo $key; ?>" type="checkbox">
+										<input onclick="selectTag(this, <?php echo $val['ID_TAG']; ?>)" value="<?php echo $val['ID_TAG']; ?>" name="TAG<?php echo $key; ?>" type="checkbox" <?php echo (in_array(['ID'=>$val['ID_TAG']], $TASK_DATA['TASK_IMAGES'][0]['TAGS']))?'checked':'' ?>>
 										<p class="checkbox_custom">&#10004;</p>
 									</label>
 								</div>
@@ -48,12 +48,8 @@
 						</div>
 					</div>
 					<script>
+						var IDtask = <?php echo $TASK_DATA['ID']; ?>;
+						var CurImageID = <?php echo $TASK_DATA['TASK_IMAGES'][0]['ID_IMAGE']; ?>;
+						var data_tasklist = <?php echo json_encode($TASK_DATA['TASK_IMAGES']); ?>;
 						var endDateTime = '<?php echo $TASK_DATA['DT_END']; ?>';
-						let end = new Date(endDateTime).getTime();
-						let msec = end - Date.now();
-						let sec = Math.floor(msec / 1000);
-						console.log(sec);
-						let min = sec / 60;
-						console.log(min);
-						console.log(min.split('.'));
 					</script>

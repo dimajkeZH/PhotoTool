@@ -634,10 +634,9 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                display: none; }
-              .main_wrapper .content_wrapper .user_main_content_info .user_task .sidebar_wrapper .sidebar .sidebar_item .btn:hover {
+                display: none;
                 background-color: #2ea999; }
-                .main_wrapper .content_wrapper .user_main_content_info .user_task .sidebar_wrapper .sidebar .sidebar_item .btn:hover.active {
+                .main_wrapper .content_wrapper .user_main_content_info .user_task .sidebar_wrapper .sidebar .sidebar_item .btn.active {
                   display: block; }
         .main_wrapper .content_wrapper .user_main_content_info .user_task .user_task_info {
           width: 70%;

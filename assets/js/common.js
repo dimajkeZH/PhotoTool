@@ -103,8 +103,15 @@ function Ajax(uri, data = [], callback = ''){
     success: function(data){
       console.log(data);
       try{
-        data = JSON.parse(data.trim());
-        window[callback](data.message, data.status);
+        if(data != ''){
+          data = JSON.parse(data.trim());
+        }else{
+          data.message = 'Empty return data';
+          data.status = false;
+        }
+        if(callback != ''){
+          window[callback](data.message, data.status);
+        }
       }catch{
         console.log('Error of script. Refresh page!');
       }finally{

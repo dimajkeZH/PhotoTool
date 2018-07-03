@@ -39,6 +39,18 @@ return [
 		'subtitle' => '',
 	],
 	/* USER END */
+	/* USER AJAX */
+	'task/save' => [
+		'controller' => 'UserAjax',
+		'action' => 'saveTask',
+		'subtitle' => '',
+	],
+	'task/status' => [
+		'controller' => 'UserAjax',
+		'action' => 'statusTask',
+		'subtitle' => '',
+	],
+	/* USER AJAX END */
 
 	/* ADMIN */
 	'admin' => [
@@ -90,7 +102,7 @@ return [
 	],
 	/* ADMIN END */
 
-	/* AJAX */
+	/* ADMIN AJAX */
 	'images/upload' => [
 		'controller' => 'AdminAjax',
 		'action' => 'uploadImage',
@@ -129,9 +141,9 @@ return [
 		'action' => 'saveTags',
 		'subtitle' => 'API',
 	],
-	/* AJAX END */
+	/* ADMIN AJAX END */
 
-	/* API GET_DATA */
+	/* ADMIN API GET_DATA */
 	'users/[0-9]{1,}' => [
 		'controller' => 'AdminAjax',
 		'action' => 'getUser',
@@ -147,5 +159,5 @@ return [
 		'action' => 'getTagTypes',
 		'subtitle' => 'API',
 	],
-	/* API GET_DATA END */
+	/* ADMIN API GET_DATA END */
 ];

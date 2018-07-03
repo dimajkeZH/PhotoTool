@@ -20,4 +20,16 @@ class UserAjaxController extends UserController {
 
 	private $post;
 
+	public function saveTaskAction(){
+		$this->post = $_POST;
+		if($this->model->saveTask($this->post)){
+			$this->model->message(true, self::MESSAGE__SAVE_GOOD);
+		}else{
+			$this->model->message(false, self::MESSAGE__SAVE_BAD);
+		}
+	}
+
+	public function statusTaskAction(){
+		$this->model->checkedTask($_POST);
+	}
 }
