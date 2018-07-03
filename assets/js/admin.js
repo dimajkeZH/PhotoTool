@@ -203,6 +203,21 @@ function saveTagsAfter(text, status){
     showMessage(text, typeMessage.bad);
   }
 }
+
+function changeTask(ID = -1){
+  if(ID == -1){
+    $('#btn_close').hide();
+  }else{
+    $('#btn_close').show();
+  }
+  //
+  //
+  //
+  modalOpen();
+}
+function deleteTask(THIS, ID){
+
+}
 /********************* EVENTS END *********************/
 
 

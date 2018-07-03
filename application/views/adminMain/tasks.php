@@ -2,7 +2,7 @@
 			<div class="main_content_head">
 				<p class="main_content_head_title">Список заданий</p>
 				<div class="main_content_head_settings">
-					<button onclick="modalOpen()" class="btn green">Добавить</button>
+					<button onclick="changeTask()" class="btn green">Добавить</button>
 				</div>
 			</div>
 			<div class="main_content_info">
@@ -16,67 +16,23 @@
 								<th>Дата конца</th>
 								<th>Времени осталось</th>
 								<th>Статус</th>
-								<th>Процент</th>
 								<th style="width:120px;">Изменить</th>
 								<th style="width:120px;">Удалить</th>
 							</tr>
 						</thead>
 						<tbody>
+							<?php foreach($TASKS as $key => $val): ?>
 							<tr class="table_item">
-								<td><span>1</span></td>
-								<td><span>zh</span></td>
-								<td><span>28.07.18 20:54</span></td>
-								<td><span>29.07.18 20:54</span></td>
-								<td><span>20:05:54</span></td>
-								<td><span>Выполнено</span></td>
-								<td><span>66%</span></td>
-								<td><button class="btn blue">C</button></td>
-								<td><button class="btn red">X</button></td>
+								<td><span><?php echo $key + 1; ?></span></td>
+								<td><span><?php echo $val['NAME']; ?></span></td>
+								<td><span><?php echo $val['DT_START']; ?></span></td>
+								<td><span><?php echo $val['DT_END']; ?></span></td>
+								<td><span><?php echo $val['REM']; ?></span></td>
+								<td><span><?php echo $val['STATUS']; ?></span></td>
+								<td><button class="btn blue" onclick="changeTask(<?php echo $val['ID']; ?>)">C</button></td>
+								<td><button class="btn red" onclick="deleteTask(this, <?php echo $val['ID']; ?>)">X</button></td>
 							</tr>
-							<tr class="table_item">
-								<td><span>1</span></td>
-								<td><span>zh</span></td>
-								<td><span>28.07.18 20:54</span></td>
-								<td><span>29.07.18 20:54</span></td>
-								<td><span>20:05:54</span></td>
-								<td><span>Выполнено</span></td>
-								<td><span>66%</span></td>
-								<td><button class="btn blue">C</button></td>
-								<td><button class="btn red">X</button></td>
-							</tr>
-							<tr class="table_item">
-								<td><span>1</span></td>
-								<td><span>zh</span></td>
-								<td><span>28.07.18 20:54</span></td>
-								<td><span>29.07.18 20:54</span></td>
-								<td><span>20:05:54</span></td>
-								<td><span>Выполнено</span></td>
-								<td><span>66%</span></td>
-								<td><button class="btn blue">C</button></td>
-								<td><button class="btn red">X</button></td>
-							</tr>
-							<tr class="table_item">
-								<td><span>1</span></td>
-								<td><span>zh</span></td>
-								<td><span>28.07.18 20:54</span></td>
-								<td><span>29.07.18 20:54</span></td>
-								<td><span>20:05:54</span></td>
-								<td><span>Выполнено</span></td>
-								<td><span>66%</span></td>
-								<td><button class="btn blue">C</button></td>
-								<td><button class="btn red">X</button></td>
-							</tr>
-							<tr class="table_item">
-								<td><span>1</span></td>
-								<td><span>zh</span></td>
-								<td><span>28.07.18 20:54</span></td>
-								<td><span>29.07.18 20:54</span></td>
-								<td><span>20:05:54</span></td>
-								<td><span>Выполнено</span></td>
-								<td><span>66%</span></td>
-								<td><button class="btn blue">C</button></td>
-								<td><button class="btn red">X</button></td>
-							</tr>
+							<?php endforeach; ?>
 						</tbody>
 					</table>
 				</div>
@@ -88,11 +44,15 @@
 			<div class="modal_wnd_inner" id="window">
 				<div class="modal_wnd_head">
 					<button onclick="modalClose()" class="btn red">Отмена</button>
-					<button form="modal_tasks_form" class="btn green">Сохранить</button>
+					<div>
+						<button id="btn_close" class="btn blue" onclick="closeTask()">Закончить</button>
+						<button form="modal_tasks_form" class="btn green">Сохранить</button>
+					</div>
 				</div>
 				<div class="modal_wnd_content">
 					<div class="modal_tasks">
 						<form id="modal_tasks_form" class="modal_tasks_form" action="">
+							<input hidden type="text" name="ID" value="-1">
 							<div class="modal_tasks_form_head">
 								<div class="forma_group">
 									<label>

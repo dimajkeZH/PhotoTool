@@ -42,7 +42,7 @@ class AdminMain extends Admin {
 	}
 
 	public function getTasks(){
-		$q = 'SELECT * FROM TASK_LIST';
+		$q = 'SELECT TL.ID, UA.NAME, TL.DT_START, TL.DT_END, CONCAT((TIMESTAMPDIFF(MINUTE,NOW(),TL.DT_END)), " мин") as REM, TS.NAME as STATUS FROM TASK_LIST as TL INNER JOIN TASK_STATUSES as TS ON TS.VALUE = TL.VAL_STATUS INNER JOIN USER_ACCOUNTS as UA ON UA.ID = TL.ID_USER ORDER BY 1';
 		$return['TASKS'] = $this->db->row($q);
 		return $return;
 	}
