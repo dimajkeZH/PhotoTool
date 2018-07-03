@@ -135,9 +135,11 @@
 						return;
 					}
 				});
-				cancelUpload();
+				if(FILES.length == 0){
+					cancelUpload();
+					scrollDown();
+				}
 	    		showMessage(data.message, typeMessage.good);
-	    		scrollDown();
 	    	}else{
 	    		showMessage(data.message, typeMessage.bad);
 	    	}
